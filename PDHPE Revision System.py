@@ -37,6 +37,9 @@ def home():
     homepage.pack(fill="both", expand = 1)
     lessonpage.pack_forget()
     
+test = CTkButton(homepage, text="test")
+test.pack()
+
 
 # Widgets for Home Page
 
