@@ -10,11 +10,28 @@ homepage = CTkFrame(root, width = 500, height = 700)
 homepage.pack(fill="both", expand = 1)
 lessonpage = CTkFrame(root, width = 400, height = 400)
 quizpage = CTkFrame(root, width = 400, height = 400)
+scenariopage = CTkFrame(root, width = 400, height = 400)
 
 # different quiz pages
 quizpage_1 = CTkFrame(root, width = 400, height = 400)
 quizpage_2 = CTkFrame(root, width = 400, height = 400)
 quizpage_3 = CTkFrame(root, width = 400, height = 400)
+
+# result pages for quizzes
+quiz_1_resultpage = CTkFrame(root,width = 400, height = 400)
+quiz_2_resultpage = CTkFrame(root,width = 400, height = 400)
+quiz_3_resultpage = CTkFrame(root,width = 400, height = 400)
+
+# different scenario pages
+scenariopage_1 = CTkFrame(root, width= 400, height = 400)
+scenariopage_2 = CTkFrame(root, width= 400, height = 400)
+scenariopage_3 = CTkFrame(root, width= 400, height = 400)
+
+# result pages for scenarios
+scenario_1_resultpage = CTkFrame(root,width = 400, height = 400)
+scenario_2_resultpage = CTkFrame(root,width = 400, height = 400)
+scenario_3_resultpage = CTkFrame(root,width = 400, height = 400)
+
 
 
 # commands for size
@@ -36,10 +53,6 @@ def large():
 
 # Switching Pages
 
-def lesson():
-    lessonpage.pack(fill="both", expand = 1)
-    homepage.pack_forget()
-   
 def home():
     homepage.pack(fill="both", expand = 1)
     lessonpage.pack_forget()
@@ -47,9 +60,27 @@ def home():
     quizpage_1.pack_forget()
     quizpage_2.pack_forget()
     quizpage_3.pack_forget()
+    quiz_1_resultpage.pack_forget()
+    quiz_2_resultpage.pack_forget()
+    quiz_3_resultpage.pack_forget()
+    scenariopage.pack_forget()
+    scenariopage_1.pack_forget()
+    scenariopage_2.pack_forget()
+    scenariopage_3.pack_forget()
+    scenario_1_resultpage.pack_forget() 
+    scenario_2_resultpage.pack_forget()
+    scenario_3_resultpage.pack_forget()
+
+def lesson():
+    lessonpage.pack(fill="both", expand = 1)
+    homepage.pack_forget()
 
 def quiz(): 
     quizpage.pack(fill="both", expand = 1)
+    homepage.pack_forget()
+
+def scenario():
+    scenariopage.pack(fill="both", expand = 1)
     homepage.pack_forget()
 
 def begin_quiz_1():
@@ -64,7 +95,17 @@ def begin_quiz_3():
     quizpage.pack_forget()
     quizpage_3.pack(fill="both", expand = 1)
 
+def begin_scenario_1():
+    scenariopage.pack_forget()
+    scenariopage_1.pack(fill="both", expand = 1)
 
+def begin_scenario_2():
+    scenariopage.pack_forget()
+    scenariopage_2.pack(fill="both", expand = 1)
+
+def begin_scenario_3():
+    scenariopage.pack_forget()
+    scenariopage_3.pack(fill="both", expand = 1)
 
 
 # Widgets for Home Page
@@ -81,7 +122,7 @@ lesson_button.place(x=130, y=150)
 quiz_button = CTkButton(homepage, width=200, height=100, text="Quiz", font=("Arial bold", 15), command = quiz)
 quiz_button.place(x=130, y=300)
 
-scenario_button = CTkButton(homepage, width=200, height=100, text="Scenario", font=("Arial bold", 15))
+scenario_button = CTkButton(homepage, width=200, height=100, text="Scenario", font=("Arial bold", 15), command = scenario)
 scenario_button.place(x=130, y=450)
 
 # Widgets for Lesson Page
@@ -105,6 +146,19 @@ quiz_2 = CTkButton(quizpage, width=500, height=100, text="Inquiry Question 2 Qui
 quiz_2.place(x=0, y=300)
 quiz_3 = CTkButton(quizpage, width=500, height=100, text="Inquiry Question 3 Quiz", command= begin_quiz_3)
 quiz_3.place(x=0, y=400) 
+
+# Widgets for Scenario Page
+
+scenariopage_title = CTkLabel(scenariopage, text="Scenario List", font=("arial", 25))
+scenariopage_title.place(x=190, y=25)
+
+scenario_1 = CTkButton(scenariopage, width=500, height=100, text="Scenario 1", command= begin_scenario_1)
+scenario_1.place(x=0, y=200)
+scenario_2 = CTkButton(scenariopage, width=500, height=100, text="Scenario 2", command= begin_scenario_2)
+scenario_2.place(x=0, y=300)
+scenario_3 = CTkButton(scenariopage, width=500, height=100, text="Scenario 3", command= begin_scenario_3)
+scenario_3.place(x=0, y=400) 
+
 
 # widgets for quiz 1 
 
@@ -202,8 +256,10 @@ def quiz_1_marking():
         score = score + 1
     if quiz_1_question_10_entry.get() == "a":
         score = score + 1
-    quiz_1_result = CTkLabel(quizpage_1, text = f"Your Score is : {score}", font=("arial", 25), bg_color = "green")
-    quiz_1_result.place(x=220, y=545)
+    quiz_1_resultpage.pack(fill="both", expand = 1)
+    quizpage_1.pack_forget()
+    quiz_1_result = CTkLabel(quiz_1_resultpage, text = f"Your Score is : {score}/10", font=("arial", 50), bg_color = "green")
+    quiz_1_result.place(x=40, y=250)
 
 # submit button for quiz 1
 
@@ -328,8 +384,10 @@ def quiz_2_marking():
         score = score + 1
     if quiz_2_question_10_entry.get() == "a":
         score = score + 1
-    quiz_2_result = CTkLabel(quizpage_2, text = f"Your Score is : {score}", font=("arial", 25), bg_color = "green")
-    quiz_2_result.place(x=220, y=545)
+    quiz_2_resultpage.pack(fill="both", expand = 1)
+    quizpage_2.pack_forget()
+    quiz_2_result = CTkLabel(quiz_2_resultpage, text = f"Your Score is : {score}/10", font=("arial", 50), bg_color = "green")
+    quiz_2_result.place(x=40, y=250)
 
 
 # submit button for quiz 2
@@ -455,13 +513,310 @@ def quiz_3_marking():
         score = score + 1
     if quiz_3_question_10_entry.get() == "a":
         score = score + 1
-    quiz_3_result = CTkLabel(quizpage_3, text = f"Your Score is : {score}", font=("arial", 25), bg_color = "green")
-    quiz_3_result.place(x=220, y=545)
+    quiz_3_resultpage.pack(fill="both", expand = 1)
+    quizpage_3.pack_forget()
+    quiz_3_result = CTkLabel(quiz_3_resultpage, text = f"Your Score is : {score}/10", font=("arial", 50), bg_color = "green")
+    quiz_3_result.place(x=40, y=250)
 
 # submit button for quiz 3
 
 quiz_3_submit = CTkButton(quizpage_3, text = "Submit", command = quiz_3_marking)
 quiz_3_submit.place(x=350, y=650)
+
+# widgets for scenario 1
+
+scenario_1_description_title = CTkLabel(scenariopage_1, text = "Scenario 1 Description:", font = ("arial bold", 20))
+scenario_1_description_title.place(x = 15, y = 10)
+
+scenario_1_description = CTkLabel(scenariopage_1, text = "blahblahblahblahblahblahvblahblahblahb\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah" )
+scenario_1_description.place( x = 10, y = 50)
+
+# scenario 1 question 1 widgets
+
+scenario_1_question_1_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_1_title.place(x = 10, y = 175)
+                                
+scenario_1_question_1_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_1_entry.place(x = 20, y = 270 )
+
+# scenario 1 question 2 widgets
+
+scenario_1_question_2_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_2_title.place(x = 175, y = 175)
+                                
+scenario_1_question_2_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_2_entry.place(x = 185, y = 270)
+
+# scenario 1 question 3 widgets
+
+scenario_1_question_3_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_3_title.place(x = 10, y = 350)
+                                
+scenario_1_question_3_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_3_entry.place(x = 20, y = 445)
+
+# scenario 1 question 4 widgets
+
+scenario_1_question_4_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_4_title.place(x = 175, y = 350)
+                                
+scenario_1_question_4_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_4_entry.place(x = 185, y = 445)
+
+# scenario 1 question 5 widgets
+
+scenario_1_question_5_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_5_title.place(x = 340, y = 350)
+                                
+scenario_1_question_5_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_5_entry.place(x = 350, y = 445)
+
+# scenario 1 question 6 widgets
+
+scenario_1_question_6_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_6_title.place(x = 10, y = 525)
+                                
+scenario_1_question_6_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_6_entry.place(x = 20, y = 620)
+
+# scenario 1 question 7 widgets
+
+scenario_1_question_7_title = CTkLabel(scenariopage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_1_question_7_title.place(x = 175, y = 525)
+                                
+scenario_1_question_7_entry = CTkEntry(scenariopage_1, width = 100)
+scenario_1_question_7_entry.place(x = 185, y = 620)
+
+# scenario 1 marking
+
+def scenario_1_marking():
+    score = 0
+    if scenario_1_question_1_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_2_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_3_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_4_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_5_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_6_entry.get() == "a" :
+        score = score + 1
+    if scenario_1_question_7_entry.get() == "a" :
+        score = score + 1
+    scenario_1_resultpage.pack(fill="both", expand = 1)
+    scenariopage_1.pack_forget()
+    scenario_1_result = CTkLabel(scenario_1_resultpage, text = f"Your Score is : {score}/7", font=("arial", 50), bg_color = "green")
+    scenario_1_result.place(x=40, y=250)
+
+# scenario 1 submit button
+
+scenario_1_submit = CTkButton(scenariopage_1, text = "Submit", command = scenario_1_marking)
+scenario_1_submit.place(x = 340, y = 620)
+
+# widgets for scenario 2
+
+scenario_2_description_title = CTkLabel(scenariopage_2, text = "scenario 2 Description:", font = ("arial bold", 20))
+scenario_2_description_title.place(x = 15, y = 10)
+
+scenario_2_description = CTkLabel(scenariopage_2, text = "blahblahblahblahblahblahvblahblahblahb\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah" )
+scenario_2_description.place( x = 10, y = 50)
+
+
+# scenario 2 question 1 widgets
+
+scenario_2_question_1_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_1_title.place(x = 10, y = 175)
+                               
+scenario_2_question_1_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_1_entry.place(x = 20, y = 270 )
+
+
+# scenario 2 question 2 widgets
+
+scenario_2_question_2_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_2_title.place(x = 175, y = 175)
+                               
+scenario_2_question_2_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_2_entry.place(x = 185, y = 270)
+
+
+# scenario 2 question 3 widgets
+
+scenario_2_question_3_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_3_title.place(x = 10, y = 350)
+                               
+scenario_2_question_3_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_3_entry.place(x = 20, y = 445)
+
+
+# scenario 2 question 4 widgets
+
+scenario_2_question_4_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_4_title.place(x = 175, y = 350)
+                               
+scenario_2_question_4_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_4_entry.place(x = 185, y = 445)
+
+
+# scenario 2 question 5 widgets
+
+scenario_2_question_5_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_5_title.place(x = 340, y = 350)
+                               
+scenario_2_question_5_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_5_entry.place(x = 350, y = 445)
+
+
+# scenario 2 question 6 widgets
+
+scenario_2_question_6_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_6_title.place(x = 10, y = 525)
+                               
+scenario_2_question_6_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_6_entry.place(x = 20, y = 620)
+
+
+# scenario 2 question 7 widgets
+
+scenario_2_question_7_title = CTkLabel(scenariopage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_2_question_7_title.place(x = 175, y = 525)
+                               
+scenario_2_question_7_entry = CTkEntry(scenariopage_2, width = 100)
+scenario_2_question_7_entry.place(x = 185, y = 620)
+
+
+# scenario 2 marking
+
+def scenario_2_marking():
+    score = 0
+    if scenario_2_question_1_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_2_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_3_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_4_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_5_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_6_entry.get() == "a" :
+        score = score + 1
+    if scenario_2_question_7_entry.get() == "a" :
+        score = score + 1
+    scenario_2_resultpage.pack(fill="both", expand = 1)
+    scenariopage_2.pack_forget()
+    scenario_2_result = CTkLabel(scenario_2_resultpage, text = f"Your Score is : {score}/7", font=("arial", 50), bg_color = "green")
+    scenario_2_result.place(x=40, y=250)
+
+
+# scenario 2 submit button
+
+scenario_2_submit = CTkButton(scenariopage_2, text = "Submit", command = scenario_2_marking)
+scenario_2_submit.place(x = 340, y = 620)
+
+# widgets for scenario 3
+
+scenario_3_description_title = CTkLabel(scenariopage_3, text = "scenario 3 Description:", font = ("arial bold", 20))
+scenario_3_description_title.place(x = 15, y = 10)
+
+
+scenario_3_description = CTkLabel(scenariopage_3, text = "blahblahblahblahblahblahvblahblahblahb\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah\nlahblahblahblahblahblahblahblahblahblah" )
+scenario_3_description.place( x = 10, y = 50)
+
+
+# scenario 3 question 1 widgets
+
+scenario_3_question_1_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_1_title.place(x = 10, y = 175)
+                               
+scenario_3_question_1_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_1_entry.place(x = 20, y = 270 )
+
+
+# scenario 3 question 2 widgets
+
+scenario_3_question_2_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_2_title.place(x = 175, y = 175)
+                               
+scenario_3_question_2_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_2_entry.place(x = 185, y = 270)
+
+
+# scenario 3 question 3 widgets
+
+scenario_3_question_3_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_3_title.place(x = 10, y = 350)
+                               
+scenario_3_question_3_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_3_entry.place(x = 20, y = 445)
+
+
+# scenario 3 question 4 widgets
+
+scenario_3_question_4_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_4_title.place(x = 175, y = 350)
+                               
+scenario_3_question_4_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_4_entry.place(x = 185, y = 445)
+
+
+# scenario 3 question 5 widgets
+
+scenario_3_question_5_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_5_title.place(x = 340, y = 350)
+                               
+scenario_3_question_5_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_5_entry.place(x = 350, y = 445)
+
+
+# scenario 3 question 6 widgets
+
+scenario_3_question_6_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_6_title.place(x = 10, y = 525)
+                               
+scenario_3_question_6_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_6_entry.place(x = 20, y = 620)
+
+
+# scenario 3 question 7 widgets
+
+scenario_3_question_7_title = CTkLabel(scenariopage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+scenario_3_question_7_title.place(x = 175, y = 525)
+                               
+scenario_3_question_7_entry = CTkEntry(scenariopage_3, width = 100)
+scenario_3_question_7_entry.place(x = 185, y = 620)
+
+
+# scenario 3 marking
+
+def scenario_3_marking():
+    score = 0
+    if scenario_3_question_1_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_2_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_3_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_4_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_5_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_6_entry.get() == "a" :
+        score = score + 1
+    if scenario_3_question_7_entry.get() == "a" :
+        score = score + 1
+    scenario_3_resultpage.pack(fill="both", expand = 1)
+    scenariopage_3.pack_forget()
+    scenario_3_result = CTkLabel(scenario_3_resultpage, text = f"Your Score is : {score}/7", font=("arial", 50), bg_color = "green")
+    scenario_3_result.place(x=40, y=250)
+
+
+# scenario 3 submit button
+
+scenario_3_submit = CTkButton(scenariopage_3, text = "Submit", command = scenario_3_marking)
+scenario_3_submit.place(x = 340, y = 620)
 
 # menubar
 
