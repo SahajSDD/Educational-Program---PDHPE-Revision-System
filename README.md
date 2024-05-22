@@ -18,3 +18,7 @@ Commit 3:
 
 Question layout for quizzes was finalised, with a submit button implemented in the bottom corner. Upon pressing the submit button, a label will appear displaying the user score. This label's background was changed to green for users to easily notice that it had appeared. Buttons and titles on the homepage were also altered so that their text will be in "bold" and "italic", allows the user to read some of its text more easily. Note: at this point, all questions and answers were identical and placeholders to test if the whole program would run as intended. Quiz pages for quiz 2 and quiz 3 were also built, layout for both were identical to quiz 1.
 
+Commit 4:
+
+Scenario part of revision system was completed, with placeholder questions, answers, and descriptions. Includes the creation of functions to switch between scenario pages, functions to mark scenario questions and functions to output result. The scenarios segment of the system only has 7 questions per scenario, to improve the layout of the page, and allow for description and instruction labels. A gap has also been left on each scenario page for the future implementation of images to supplement scenarios. Also edited the code so that results would appear on different pagse and not on the pages with questions. Also added "/total amount of questions" on result outputs.
+
