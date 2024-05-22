@@ -20,5 +20,8 @@ Question layout for quizzes was finalised, with a submit button implemented in t
 
 Commit 4:
 
-Scenario part of revision system was completed, with placeholder questions, answers, and descriptions. Includes the creation of functions to switch between scenario pages, functions to mark scenario questions and functions to output result. The scenarios segment of the system only has 7 questions per scenario, to improve the layout of the page, and allow for description and instruction labels. A gap has also been left on each scenario page for the future implementation of images to supplement scenarios. Also edited the code so that results would appear on different pagse and not on the pages with questions. Also added "/total amount of questions" on result outputs.
+Scenario part of revision system was completed, with placeholder questions, answers, and descriptions. Includes the creation of functions to switch between scenario pages, functions to mark scenario questions and functions to output result. The scenarios segment of the system only has 7 questions per scenario, to improve the layout of the page, and allow for description and instruction labels. A gap has also been left on each scenario page for the future implementation of images to supplement scenarios. Also edited the code so that results would appear on different page and not on the pages with questions. Also added "/total amount of questions" on result outputs.
 
+Commit 4:
+
+The default window size was increased as upon trying to enter questions and answers onto quiz pages, most did not fit. This in turn led to adjusting widgets to account for the change in default window size as well as adjusting the size functions. The buttons that take the user to lessons were also renamed to inquiry questions 1-3 rather than placeholder labels.
