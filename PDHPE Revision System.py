@@ -48,7 +48,7 @@ def medium():
 
 def large():
     set_widget_scaling(1.1)
-    root.minsize(870, 880)
+    root.minsize(870, 800)
     root.geometry("550x850")
 
 # Switching Pages
@@ -164,74 +164,104 @@ scenario_3.place(x=0, y=400)
 # widgets for quiz 1 
 
 # quiz 1 question 1 widgets
-quiz_1_question_1_title = CTkLabel(quizpage_1, text = "1)What does STOP stand for?\n\na)stop, talk, observe, prevent\nb)support, treat, observe, prevent\nc)save, treat, observe, prevent\nd)stop, talk, observe, place")
+quiz_1_question_1_title = CTkLabel(quizpage_1, text = "1)What does STOP stand for?", font = ("arial bold", 12))
 quiz_1_question_1_title.place(x=5, y=10)
 
+quiz_1_question_1_choices = CTkLabel(quizpage_1, text = "a)stop, talk, observe, prevent\nb)support, treat, observe, prevent\nc)save, treat, observe, prevent\nd)stop, talk, observe, place")
+quiz_1_question_1_choices.place(x = 5, y = 35)
+
 quiz_1_question_1_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_1_entry.place(x=10, y=105)
+quiz_1_question_1_entry.place(x=25, y=105)
 
 # quiz 1 question 2 widgets
-quiz_1_question_2_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_2_title.place(x=300, y=10)
+quiz_1_question_2_title = CTkLabel(quizpage_1, text = "2) When would it be appropriate to commence CPR?", font = ("arial bold", 12))
+quiz_1_question_2_title.place(x=225, y=10)
+
+quiz_1_question_2_choices = CTkLabel(quizpage_1, text = "a) As soon as possible\nb) If patient is not breathing\nc) Never. Let professionals handle CPR\nd) If the patient is unconscious")
+quiz_1_question_2_choices.place(x=245, y=35)
 
 quiz_1_question_2_entry = CTkEntry(quizpage_1, width=100)
 quiz_1_question_2_entry.place(x=305, y=105)
 
 # quiz 1 question 3 widgets
-quiz_1_question_3_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_3_title.place(x=600, y=10)
+quiz_1_question_3_title = CTkLabel(quizpage_1, text = "3) PER is used for what type of injury", font=("arial bold", 12))
+quiz_1_question_3_title.place(x=550, y=10)
+
+quiz_1_question_3_choices = CTkLabel(quizpage_1, text = "a)concussions\nb) fractures\nc) muscle tears\nd) bleeding")
+quiz_1_question_3_choices.place(x=600, y=35)
 
 quiz_1_question_3_entry = CTkEntry(quizpage_1, width=100)
 quiz_1_question_3_entry.place(x=605, y=105)
 
 # quiz 1 question 4 widgets
-quiz_1_question_4_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_1_question_4_title = CTkLabel(quizpage_1, text = "4) Which is not a cause of shock?", font=("arial bold", 12))
 quiz_1_question_4_title.place(x=5, y=200)
 
+quiz_1_question_4_choices = CTkLabel(quizpage_1, text = "a) loss of blood\nb) blisters\nc) loss of fluids \nd) heart attack")
+quiz_1_question_4_choices.place(x=15, y=225)
+
 quiz_1_question_4_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_4_entry.place(x=10, y=295)
+quiz_1_question_4_entry.place(x=20, y=295)
 
 # quiz 1 question 5 widgets
-quiz_1_question_5_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_5_title.place(x=300, y=200)
+quiz_1_question_5_title = CTkLabel(quizpage_1, text = "5) What is the management for neck and spinal injuries?", font=("arial bold", 12))
+quiz_1_question_5_title.place(x=225, y=200)
+
+quiz_1_question_5_choices = CTkLabel(quizpage_1, text = "a) massage therapy\nb) ice pack application\nc) immobilisation and transportation to medical facility\nd) dynamic stretching")
+quiz_1_question_5_choices.place(x=230, y=225)
 
 quiz_1_question_5_entry = CTkEntry(quizpage_1, width=100)
 quiz_1_question_5_entry.place(x=305, y=295)
 
 # quiz 1 question 6 widgets
-quiz_1_question_6_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_6_title.place(x=600, y=200)
+quiz_1_question_6_title = CTkLabel(quizpage_1, text = "6) What movement method would\n be used for the unconscious", font=('arial bold', 12))
+quiz_1_question_6_title.place(x=570, y=190)
+
+quiz_1_question_6_choices = CTkLabel(quizpage_1, text = "a) drag method\nb) four handed seat method \nc) chair lift method\nd) human crutch")
+quiz_1_question_6_choices.place(x=600, y=225)
 
 quiz_1_question_6_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_6_entry.place(x=605, y=295)
+quiz_1_question_6_entry.place(x=620, y=295)
 
 # quiz 1 question 7 widgets
-quiz_1_question_7_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_1_question_7_title = CTkLabel(quizpage_1, text = "7) When would there need to be medical referral", font=("arial bold", 12))
 quiz_1_question_7_title.place(x=5, y=390)
 
+quiz_1_question_7_choices = CTkLabel(quizpage_1, text = "a) CPR was required\nb) Open wound\nc) Patient is in distress\nd) medication was used")
+quiz_1_question_7_choices.place(x=45, y=415)
+
 quiz_1_question_7_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_7_entry.place(x=10, y=485)
+quiz_1_question_7_entry.place(x=55, y=485)
 
 # quiz 1 question 8 widgets
-quiz_1_question_8_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_8_title.place(x=300, y=390)
+quiz_1_question_8_title = CTkLabel(quizpage_1, text = "8) What does the recovery position do for the patient?", font=("arial bold", 12))
+quiz_1_question_8_title.place(x=280, y=390)
+
+quiz_1_question_8_choices = CTkLabel(quizpage_1, text = "a) relaxes spine and vertebrae\nb) encourages healthy blood flow\nc) keeps airway clear and open\nd) stimulates nervous response")
+quiz_1_question_8_choices.place(x=300, y=415)
 
 quiz_1_question_8_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_8_entry.place(x=305, y=485)
+quiz_1_question_8_entry.place(x=335, y=485)
 
 # quiz 1 question 9 widgets
-quiz_1_question_9_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_1_question_9_title.place(x=600, y=390)
+quiz_1_question_9_title = CTkLabel(quizpage_1, text = "9) Whose safety needs to be\n ensured first?", font=('arial bold', 12))
+quiz_1_question_9_title.place(x=605, y=380)
+
+quiz_1_question_9_choices = CTkLabel(quizpage_1, text = "a) the casualty\nb) bystanders\nc) yourself\nd) whoever is most at risk")
+quiz_1_question_9_choices.place(x=610, y=415)
 
 quiz_1_question_9_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_9_entry.place(x=605, y=485)
+quiz_1_question_9_entry.place(x=615, y=485)
 
 # quiz 1 question 10 widgets
-quiz_1_question_10_title = CTkLabel(quizpage_1, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_1_question_10_title = CTkLabel(quizpage_1, text = "10) What is the correct order of the basic life action plan?", font = ("arial bold", 12))
 quiz_1_question_10_title.place(x=5, y=550)
 
+quiz_1_question_10_choices = CTkLabel(quizpage_1, text = "a) Response, send for help, danger, breathing, airways, defibrillation, compression\nb) Danger, breathing, response, airways, compression, defibrillation, send for help\nc) Danger, response, send for help, airways, breathing, compression, defibrillation\nd) Send for help, danger, response, breathing, airways, compression, defibrillation")
+quiz_1_question_10_choices.place(x=5, y=575)
+
 quiz_1_question_10_entry = CTkEntry(quizpage_1, width=100)
-quiz_1_question_10_entry.place(x=10, y=645)
+quiz_1_question_10_entry.place(x=100, y=645)
 
 # marking quiz 1
 
@@ -239,23 +269,23 @@ def quiz_1_marking():
     score = 0
     if quiz_1_question_1_entry.get() == "a":
         score = score + 1
-    if quiz_1_question_2_entry.get() == "a":
+    if quiz_1_question_2_entry.get() == "b":
         score = score + 1
-    if quiz_1_question_3_entry.get() == "a":
+    if quiz_1_question_3_entry.get() == "d":
         score = score + 1
-    if quiz_1_question_4_entry.get() == "a":
+    if quiz_1_question_4_entry.get() == "b":
         score = score + 1
-    if quiz_1_question_5_entry.get() == "a":
+    if quiz_1_question_5_entry.get() == "c":
         score = score + 1
     if quiz_1_question_6_entry.get() == "a":
         score = score + 1
     if quiz_1_question_7_entry.get() == "a":
         score = score + 1
-    if quiz_1_question_8_entry.get() == "a":
+    if quiz_1_question_8_entry.get() == "c":
         score = score + 1
-    if quiz_1_question_9_entry.get() == "a":
+    if quiz_1_question_9_entry.get() == "c":
         score = score + 1
-    if quiz_1_question_10_entry.get() == "a":
+    if quiz_1_question_10_entry.get() == "c":
         score = score + 1
     quiz_1_resultpage.pack(fill="both", expand = 1)
     quizpage_1.pack_forget()
@@ -271,93 +301,117 @@ quiz_1_submit.place(x=600, y=650)
 
 
 # quiz 2 question 1 widgets
-quiz_2_question_1_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_2_question_1_title = CTkLabel(quizpage_2, text = "1) What is the management of burns?", font=("arial bold", 12))
 quiz_2_question_1_title.place(x=5, y=10)
+
+quiz_2_question_1_choices = CTkLabel(quizpage_2, text = "a) hold under cool running water\nb) apply blister lotions\nc) hold under cold compress\nd) DRSABCD")
+quiz_2_question_1_choices.place(x=5, y=35)
 
 
 quiz_2_question_1_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_1_entry.place(x=10, y=105)
+quiz_2_question_1_entry.place(x=45, y=105)
 
 
 # quiz 2 question 2 widgets
-quiz_2_question_2_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_2_title.place(x=300, y=10)
+quiz_2_question_2_title = CTkLabel(quizpage_2, text = "2) Which of these is not part of asthma treatment?", font=("arial bold", 12))
+quiz_2_question_2_title.place(x=250, y=10)
 
+quiz_2_question_2_choices = CTkLabel(quizpage_2, text = "a) provide water\nb) assist with medication\nc) encourage light movements \nd) breathing exercises")
+quiz_2_question_2_choices.place(x=275, y=35)
 
 quiz_2_question_2_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_2_entry.place(x=305, y=105)
+quiz_2_question_2_entry.place(x=315, y=105)
 
 
 # quiz 2 question 3 widgets
-quiz_2_question_3_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_3_title.place(x=600, y=10)
+quiz_2_question_3_title = CTkLabel(quizpage_2, text = "3) Hypoglycaemia is characterised by: ", font=("arial bold", 12))
+quiz_2_question_3_title.place(x=570, y=10)
 
+quiz_2_question_3_choices = CTkLabel(quizpage_2, text = "a) high blood sugar\nb) low blood sugar\nc) low insulin levels \nd) high insulin levels")
+quiz_2_question_3_choices.place(x=625, y=35)
 
 quiz_2_question_3_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_3_entry.place(x=605, y=105)
+quiz_2_question_3_entry.place(x=625, y=105)
 
 
 # quiz 2 question 4 widgets
-quiz_2_question_4_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_4_title.place(x=5, y=200)
+quiz_2_question_4_title = CTkLabel(quizpage_2, text = "4) What medical condition includes\n an epipen in its treatment?", font=("arial bold", 12))
+quiz_2_question_4_title.place(x=5, y=190)
 
+quiz_2_question_4_title = CTkLabel(quizpage_2, text = "a) diabetes \nb) poisoning \nc) epileptic seizures \nd) anapylaxis")
+quiz_2_question_4_title.place(x=30, y=225)
 
 quiz_2_question_4_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_4_entry.place(x=10, y=295)
+quiz_2_question_4_entry.place(x=45, y=295)
 
 
 # quiz 2 question 5 widgets
-quiz_2_question_5_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_5_title.place(x=300, y=200)
+quiz_2_question_5_title = CTkLabel(quizpage_2, text = "5) How would an area be adjusted \nfor a patient in an epileptic seizure?", font=("arial bold", 12))
+quiz_2_question_5_title.place(x=280, y=180)
 
+quiz_2_question_5_choices = CTkLabel(quizpage_2, text = "a) room temperature increased\nb) room temperature decreased\nc) clear the area around the patient\nd) all lights turned off")
+quiz_2_question_5_choices.place(x=290, y=225)
 
 quiz_2_question_5_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_5_entry.place(x=305, y=295)
+quiz_2_question_5_entry.place(x=315, y=295)
 
 
 # quiz 2 question 6 widgets
-quiz_2_question_6_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_6_title.place(x=600, y=200)
+quiz_2_question_6_title = CTkLabel(quizpage_2, text = "6) If swallowed poison,\n when should you induce vomiting?", font=("arial bold", 12))
+quiz_2_question_6_title.place(x=580, y=180)
 
+quiz_2_question_6_choices = CTkLabel(quizpage_2, text = "a) when substance is medicinal \nb) when substance is corrosive\nc) when substance is unknown \nd) when substance is hot in temperature")
+quiz_2_question_6_choices.place(x=560, y=225)
 
 quiz_2_question_6_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_6_entry.place(x=605, y=295)
+quiz_2_question_6_entry.place(x=625, y=295)
 
 
 # quiz 2 question 7 widgets
-quiz_2_question_7_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_7_title.place(x=5, y=390)
+quiz_2_question_7_title = CTkLabel(quizpage_2, text = "7) Which of these is not part\n of hypothermia treatment?", font=("arial bold", 12))
+quiz_2_question_7_title.place(x=10, y=370)
 
+quiz_2_question_7_choices = CTkLabel(quizpage_2, text = "a) drink warm fluids\nb) remove any wet clothing\nc) utilise artifical heating\nd) DRSABCD")
+quiz_2_question_7_choices.place(x=15, y=415)
 
 quiz_2_question_7_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_7_entry.place(x=10, y=485)
+quiz_2_question_7_entry.place(x=45, y=485)
 
 
 # quiz 2 question 8 widgets
-quiz_2_question_8_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_8_title.place(x=300, y=390)
+quiz_2_question_8_title = CTkLabel(quizpage_2, text = "8) What type of bandage should\n be used for a snakebite?", font=("arial bold", 12))
+quiz_2_question_8_title.place(x=300, y=370)
+
+quiz_2_question_8_choices = CTkLabel(quizpage_2, text = "a) collar and cuff \nb) pressure immobilisation \nc) reptillian power wrap\nd) elastic bandaging")
+quiz_2_question_8_choices.place(x=300, y=415)
 
 
 quiz_2_question_8_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_8_entry.place(x=305, y=485)
+quiz_2_question_8_entry.place(x=315, y=485)
 
 
 # quiz 2 question 9 widgets
-quiz_2_question_9_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_2_question_9_title.place(x=600, y=390)
+quiz_2_question_9_title = CTkLabel(quizpage_2, text = "1) What is RICER used for?", font=("arial bold", 12))
+quiz_2_question_9_title.place(x=600, y=370)
+
+quiz_2_question_9_choices = CTkLabel(quizpage_2, text = "a) concussions and head injuries \nb) eye injuries \nc) fractures and dislocations\nd) chemical burns")
+quiz_2_question_9_choices.place(x=580, y=415)
 
 
 quiz_2_question_9_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_9_entry.place(x=605, y=485)
+quiz_2_question_9_entry.place(x=625, y=485)
 
 
 # quiz 2 question 10 widgets
-quiz_2_question_10_title = CTkLabel(quizpage_2, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_2_question_10_title = CTkLabel(quizpage_2, text = "1) What does RICER stand for?", font=("arial bold", 12))
 quiz_2_question_10_title.place(x=5, y=550)
+
+quiz_2_question_10_choices = CTkLabel(quizpage_2, text = "a) Rest, Ice, Compress, Elevate, Referral \nb) Rest, Ice, Cover, Elevate, Re-Ice\nc) Rest, Ice, Compress, Extend, Referral\nd) Relieve, Ice, Comfort, Elevate, Referral")
+quiz_2_question_10_choices.place(x=5, y=575)
 
 
 quiz_2_question_10_entry = CTkEntry(quizpage_2, width=100)
-quiz_2_question_10_entry.place(x=10, y=645)
+quiz_2_question_10_entry.place(x=45, y=645)
 
 
 # marking quiz 2
@@ -367,21 +421,21 @@ def quiz_2_marking():
     score = 0
     if quiz_2_question_1_entry.get() == "a":
         score = score + 1
-    if quiz_2_question_2_entry.get() == "a":
+    if quiz_2_question_2_entry.get() == "c":
         score = score + 1
-    if quiz_2_question_3_entry.get() == "a":
+    if quiz_2_question_3_entry.get() == "b":
         score = score + 1
-    if quiz_2_question_4_entry.get() == "a":
+    if quiz_2_question_4_entry.get() == "d":
         score = score + 1
-    if quiz_2_question_5_entry.get() == "a":
+    if quiz_2_question_5_entry.get() == "c":
         score = score + 1
     if quiz_2_question_6_entry.get() == "a":
         score = score + 1
-    if quiz_2_question_7_entry.get() == "a":
+    if quiz_2_question_7_entry.get() == "c":
         score = score + 1
-    if quiz_2_question_8_entry.get() == "a":
+    if quiz_2_question_8_entry.get() == "b":
         score = score + 1
-    if quiz_2_question_9_entry.get() == "a":
+    if quiz_2_question_9_entry.get() == "c":
         score = score + 1
     if quiz_2_question_10_entry.get() == "a":
         score = score + 1
@@ -400,93 +454,118 @@ quiz_2_submit.place(x=600, y=650)
 
 
 # quiz 3 question 1 widgets
-quiz_3_question_1_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_1_title.place(x=5, y=10)
+quiz_3_question_1_title = CTkLabel(quizpage_3, text = "1) Which of these strategies are\n valid in managing a traffic accident", font=('arial bold', 12))
+quiz_3_question_1_title.place(x=25, y=5)
 
+quiz_3_question_1_choices = CTkLabel(quizpage_3, text = "a) Exiting the vehicle as soon as possible\nb) Making sure the car's ignition is on\nc) Sending a person up the road to warn traffic\nd) Lighting area with high beam lights")
+quiz_3_question_1_choices.place(x=5, y=40)
 
 quiz_3_question_1_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_1_entry.place(x=10, y=105)
+quiz_3_question_1_entry.place(x=75, y=105)
 
 
 # quiz 3 question 2 widgets
-quiz_3_question_2_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_2_title.place(x=300, y=10)
+quiz_3_question_2_title = CTkLabel(quizpage_3, text = "2) Which of these are not part of managing\n an incident in a water environment", font=("arial bold", 12))
+quiz_3_question_2_title.place(x=290, y=5)
 
+quiz_3_question_2_choices = CTkLabel(quizpage_3, text = "a) Send for help immediately\nb) Using surrounding branches or environment\nc) Assessing self limitations \nd) Only engage in rescue with more than one person")
+quiz_3_question_2_choices.place(x=280, y=40)
 
 quiz_3_question_2_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_2_entry.place(x=305, y=105)
+quiz_3_question_2_entry.place(x=355, y=105)
 
 
 # quiz 3 question 3 widgets
-quiz_3_question_3_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_3_title.place(x=600, y=10)
+quiz_3_question_3_title = CTkLabel(quizpage_3, text = "3) What is the first priority in\n giving treatment near a live wire", font=('arial bold', 12))
+quiz_3_question_3_title.place(x=585, y=5)
 
+quiz_3_question_3_choices = CTkLabel(quizpage_3, text = "a) Treat affected patient\nb) Turn off power source\nc) Clean any spilled liquids\nd) Turn off any lights in the room")
+quiz_3_question_3_choices.place(x=600, y=35)
 
 quiz_3_question_3_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_3_entry.place(x=605, y=105)
+quiz_3_question_3_entry.place(x=645, y=105)
 
 
 # quiz 3 question 4 widgets
-quiz_3_question_4_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_4_title.place(x=5, y=200)
+quiz_3_question_4_title = CTkLabel(quizpage_3, text = "4) Which fluid can HIV/AIDS\n not be passed through?", font=('arial bold', 12) )
+quiz_3_question_4_title.place(x=45, y=195)
+
+quiz_3_question_4_choices = CTkLabel(quizpage_3, text = "a) blood \nb) urine \nc) semen \nd) mucus")
+quiz_3_question_4_choices.place(x=90, y=225)
 
 
 quiz_3_question_4_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_4_entry.place(x=10, y=295)
+quiz_3_question_4_entry.place(x=75, y=295)
 
 
 # quiz 3 question 5 widgets
-quiz_3_question_5_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_5_title.place(x=300, y=200)
+quiz_3_question_5_title = CTkLabel(quizpage_3, text = "5) How can you prevent HIV transmission when performing CPR", font=('arial bold', 12))
+quiz_3_question_5_title.place(x=225, y=200)
+
+quiz_3_question_5_choices = CTkLabel(quizpage_3, text = "a) avoid contact as much as possible\nb) Cover patient face with face mask before CPR\nc) Use oils and lotions on hands as a barrier to infection\nd) perform hands-only CPR")
+quiz_3_question_5_choices.place(x=250, y=225)
 
 
 quiz_3_question_5_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_5_entry.place(x=305, y=295)
+quiz_3_question_5_entry.place(x=355, y=295)
 
 
 # quiz 3 question 6 widgets
-quiz_3_question_6_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_6_title.place(x=600, y=200)
+quiz_3_question_6_title = CTkLabel(quizpage_3, text = "6) What is illegal in\n relation to First Aid?", font=('arial bold', 12))
+quiz_3_question_6_title.place(x=645, y=195)
+
+quiz_3_question_6_choices = CTkLabel(quizpage_3, text = "a) not acting to administer CPR\nb) unconsensual treatment\nc) using excessive force\nd) unqualified first aid")
+quiz_3_question_6_choices.place(x=610, y=225)
 
 
 quiz_3_question_6_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_6_entry.place(x=605, y=295)
+quiz_3_question_6_entry.place(x=645, y=295)
 
 
 # quiz 3 question 7 widgets
-quiz_3_question_7_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_7_title.place(x=5, y=390)
+quiz_3_question_7_title = CTkLabel(quizpage_3, text = "7) What does debriefing involve?", font=("arial bold", 12))
+quiz_3_question_7_title.place(x=55, y=390)
 
+quiz_3_question_7_choices = CTkLabel(quizpage_3, text = "a) obtaining info about the incident requiring aid\nb) informing a patient of treatment procedure\nc) notifying any bystanders of circumstance\nd) contacting medical services for patient")
+quiz_3_question_7_choices.place(x=15, y=415)
 
 quiz_3_question_7_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_7_entry.place(x=10, y=485)
+quiz_3_question_7_entry.place(x=75, y=485)
 
 
 # quiz 3 question 8 widgets
-quiz_3_question_8_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_8_title.place(x=300, y=390)
+quiz_3_question_8_title = CTkLabel(quizpage_3, text = "1) What are the effects of administering\n first aid on mental health?", font=("arial bold", 12))
+quiz_3_question_8_title.place(x=315, y=380)
+
+quiz_3_question_8_choices = CTkLabel(quizpage_3, text = "a) anxiety\nb) paralysis\nc) low brain stimulation\nd) inability to regulate hormones")
+quiz_3_question_8_choices.place(x=330, y=415)
 
 
 quiz_3_question_8_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_8_entry.place(x=305, y=485)
+quiz_3_question_8_entry.place(x=355, y=485)
 
 
 # quiz 3 question 9 widgets
-quiz_3_question_9_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
-quiz_3_question_9_title.place(x=600, y=390)
+quiz_3_question_9_title = CTkLabel(quizpage_3, text = "9) What is a method that can help\n first aiders deal with mental health?", font=("arial bold", 12))
+quiz_3_question_9_title.place(x=580, y=380)
 
+quiz_3_question_9_choices = CTkLabel(quizpage_3, text = "a) practicing treatment\nb) mentoring other first aiders\nc) medications\nd) counselling")
+quiz_3_question_9_choices.place(x=600, y=415)
 
 quiz_3_question_9_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_9_entry.place(x=605, y=485)
+quiz_3_question_9_entry.place(x=645, y=485)
 
 
 # quiz 3 question 10 widgets
-quiz_3_question_10_title = CTkLabel(quizpage_3, text = "1)what is the blah bah\n\na)the donkey\nb)the monkey\nc)the wonkey\nd)the jonkey")
+quiz_3_question_10_title = CTkLabel(quizpage_3, text = "10) Hepatitis consists of which three viruses?", font=("arial bold", 12))
 quiz_3_question_10_title.place(x=5, y=550)
+
+quiz_3_question_10_choices = CTkLabel(quizpage_3, text = "a) Hepatitis A, Hepatitis C and Hepatitis D \nb) Hepatitis B, Hepatitis C and Hepatitis D\nc) Hepatitis A, Hepatitis B and Hepatitis E\nd) Hepatitis A, Hepatitis B and Hepatitis C ")
+quiz_3_question_10_choices.place(x=5, y=575)
 
 
 quiz_3_question_10_entry = CTkEntry(quizpage_3, width=100)
-quiz_3_question_10_entry.place(x=10, y=645)
+quiz_3_question_10_entry.place(x=75, y=645)
 
 
 # marking quiz 3
@@ -494,25 +573,25 @@ quiz_3_question_10_entry.place(x=10, y=645)
 
 def quiz_3_marking():
     score = 0
-    if quiz_3_question_1_entry.get() == "a":
+    if quiz_3_question_1_entry.get() == "c":
         score = score + 1
-    if quiz_3_question_2_entry.get() == "a":
+    if quiz_3_question_2_entry.get() == "d":
         score = score + 1
-    if quiz_3_question_3_entry.get() == "a":
+    if quiz_3_question_3_entry.get() == "b":
         score = score + 1
-    if quiz_3_question_4_entry.get() == "a":
+    if quiz_3_question_4_entry.get() == "b":
         score = score + 1
-    if quiz_3_question_5_entry.get() == "a":
+    if quiz_3_question_5_entry.get() == "b":
         score = score + 1
-    if quiz_3_question_6_entry.get() == "a":
+    if quiz_3_question_6_entry.get() == "d":
         score = score + 1
     if quiz_3_question_7_entry.get() == "a":
         score = score + 1
     if quiz_3_question_8_entry.get() == "a":
         score = score + 1
-    if quiz_3_question_9_entry.get() == "a":
+    if quiz_3_question_9_entry.get() == "d":
         score = score + 1
-    if quiz_3_question_10_entry.get() == "a":
+    if quiz_3_question_10_entry.get() == "d":
         score = score + 1
     quiz_3_resultpage.pack(fill="both", expand = 1)
     quizpage_3.pack_forget()
