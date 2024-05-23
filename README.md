@@ -22,6 +22,10 @@ Commit 4:
 
 Scenario part of revision system was completed, with placeholder questions, answers, and descriptions. Includes the creation of functions to switch between scenario pages, functions to mark scenario questions and functions to output result. The scenarios segment of the system only has 7 questions per scenario, to improve the layout of the page, and allow for description and instruction labels. A gap has also been left on each scenario page for the future implementation of images to supplement scenarios. Also edited the code so that results would appear on different page and not on the pages with questions. Also added "/total amount of questions" on result outputs.
 
-Commit 4:
+Commit 5:
 
 The default window size was increased as upon trying to enter questions and answers onto quiz pages, most did not fit. This in turn led to adjusting widgets to account for the change in default window size as well as adjusting the size functions. The buttons that take the user to lessons were also renamed to inquiry questions 1-3 rather than placeholder labels.
+
+Commit 6:
+
+Replaced placeholder questions in quizzes 1-3 with real questions relating to first aid (PDHPE senior syllabus). Included splitting the question label and the choices (a-d) labels so that moving them around to fit in the page would be easier. Also allowed for question labels to be in bold, so that the user is able to differentiate the question from the choices. Also edited marking system to account for these changes as prior to the change, the answers to all questions was "a" (placeholder).
