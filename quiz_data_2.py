@@ -11,13 +11,13 @@ quiz_data_2 = [
     },
     {
         "question": "Hypoglycaemia is characterised by:",
-        "choices": ["High Blood Sugar", "Low blood Sugar", "High Insulin Levels", "Low Insulin Levels"],
+        "choices": ["High Blood Sugar", "Low Blood Sugar", "High Insulin Levels", "Low Insulin Levels"],
         "answer": "Low Blood Sugar"
     },
     {
         "question": "What medical condition includes an epipen in its treatment?",
         "choices": ["Diabetes", "Poisoning", "Epileptic Seizures", "Anaphylaxis"],
-        "answer": "Anapylaxis"
+        "answer": "Anaphylaxis"
     },
     {
         "question": "How would an area be adjusted for a patient in an epileptic seizure?",
