@@ -4,7 +4,6 @@ import customtkinter
 from PIL import Image, ImageTk
 import tkinter as tk
 import pyttsx3
-from ttkbootstrap import Style
 from quiz_data_1 import quiz_data_1
 from quiz_data_2 import quiz_data_2
 from quiz_data_3 import quiz_data_3
@@ -49,16 +48,19 @@ scenario_3_resultpage = CTkFrame(root,width = 400, height = 400)
 
 # commands for size
 
+# Small Size Function
 def small():
     set_widget_scaling(0.75)
     root.minsize(600, 525)
     root.geometry("350x500")
 
+# Medium Size Function
 def medium():
     set_widget_scaling(1.0)
     root.minsize(800, 700)
     root.geometry("800x700")
 
+# Large Size Function
 def large():
     set_widget_scaling(1.05)
     root.minsize(800, 700)
@@ -66,6 +68,7 @@ def large():
 
 # Switching Pages
 
+# Removes any possible page on the screen packs the homepage back onto screen
 def home():
     homepage.pack(fill="both", expand = 1)
     lessonpage.pack_forget()
@@ -87,64 +90,166 @@ def home():
     scenario_2_resultpage.pack_forget()
     scenario_3_resultpage.pack_forget()
 
+# Opens Lesson Page
 def lesson():
     lessonpage.pack(fill="both", expand = 1)
     homepage.pack_forget()
 
+# Opens Quiz List
 def quiz(): 
     quizpage.pack(fill="both", expand = 1)
     homepage.pack_forget()
 
+# Opens Scenario List
 def scenario():
     scenariopage.pack(fill="both", expand = 1)
     homepage.pack_forget()
 
+# opens lesson 1 page
 def begin_lesson_1():
     lessonpage.pack_forget()
     lessonpage_1.pack(fill="both", expand = 1)
 
+# opens lesson 2 page
 def begin_lesson_2():
     lessonpage.pack_forget()
     lessonpage_2.pack(fill="both", expand = 1)
 
+# opens lesson 3 page
 def begin_lesson_3():
     lessonpage.pack_forget()
     lessonpage_3.pack(fill="both", expand = 1)
 
+# opens quiz 2 page
 def begin_quiz_1():
     quizpage.pack_forget()
     quizpage_1.pack(fill="both", expand = 1)
-    
+
+# opens quiz 2 page  
 def begin_quiz_2():
     quizpage.pack_forget()
     quizpage_2.pack(fill="both", expand = 1)
 
+# opens quiz 3 page
 def begin_quiz_3():
     quizpage.pack_forget()
     quizpage_3.pack(fill="both", expand = 1)
 
+# opens scenario 1 page
 def begin_scenario_1():
     scenariopage.pack_forget()
     scenariopage_1.pack(fill="both", expand = 1)
 
+# opens scenario 2 page
 def begin_scenario_2():
     scenariopage.pack_forget()
     scenariopage_2.pack(fill="both", expand = 1)
 
+# opens scenario 3 page
 def begin_scenario_3():
     scenariopage.pack_forget()
     scenariopage_3.pack(fill="both", expand = 1)
 
+# text to speech functions
+
+# reads content on homepage
 def homepage_tts():
     engine = pyttsx3.init()
     engine.say("PDHPE Revision System, First Aid, Lesson, Quiz, Scenario")
     engine.runAndWait()
 
-talkbutton = CTkButton(homepage, text = "Read Page Aloud", command = homepage_tts, width=50, height=50)
-talkbutton.place(x=600, y=200)
+# reads content on lesson page
+def lessonpage_tts():
+    engine = pyttsx3.init()
+    engine.say("Lesson List, Inquiry Question 1: What are the main priorities for assessment and management of first aid patients, Inquiry Question 2: How should the major types of injuries and medical conditions be managed in first aid situations?, Inquiry Question 3: What does the individual need to consider in administering first aid?")
+    engine.runAndWait()
+
+# reads content on quiz page
+def quizpage_tts():
+    engine = pyttsx3.init()
+    engine.say("Quiz List, Inquiry Question 1 Quiz, Inquiry Question 2 Quiz, Inquiry Question 3 Quiz")
+    engine.runAndWait()
+
+# reads content on scenario page
+def scenariopage_tts():
+    engine = pyttsx3.init()
+    engine.say("Scenario List, Scenario 1, Scenario 2, Scenario 3")
+    engine.runAndWait()
+
+# reads lesson 1
+def lessonpage_1_tts():
+    # placing all text from widgets in an array
+    lessonpage_1_content = ["Inquiry Question 1 Lesson", "When arriving at a scene of an incident in which First Aid is required, the first person's safety that should be ensured is yourself. Following this you should ensure the safety of the casualty and then any bystanders.", "DRSABCD", "The basic life management plan for First Aid is DRSABCD: Danger: Remove any elements of danger or future harm Response: Communicate to the casualty using the COWS method. Also involves recovery position (opens airways) Send for Help: Contact 000 or 112 Airways: Clear casualty's airways by scooping any foreign material out of their mouth Breathing: Look, listen and feel for breathing CPR: If not breathinng then, 30 Chest Compressions and 2 breaths Defibrillator: A device used when a casualty's heart stops beating", "Movement Methods", "There are four movement methods when moving a casualty, these are: Drag Method: Used when casualty is unconscious Human Crutch: Used when casualty is conscious but cannot walk Four Handed Seat: Requires two people to cross arms and use as a seat for casualty Chair Lift: Casualty sits on chair and two people lift chair to move", "STOP Regime", "The STOP regime is a method developed to assess the extent to the athelete's injury, it includes: Stop: Stop the athlete from moving Talk: Talk the athlete Observe: Observe athelete and injury site Prevent: Prevent Further Injury", "Bleeding", "The Treatment for Bleeding is PER management system which stands for: Pressure: Apply direct pressure to the wound using a bandage Elevate: Lie patient down and lift injured part above level of the heart Rest: Do not move injured part (apply bandage at this stage", "Shock", "Shock is a condition where the body closes off the blood off to the extremeties(arms and legs). Causes include: - heart attack - loss of fluids - loss of blood", "Neck and Spine", ". A neck or spine injury can be detrimental to a casualty. To ensure it doesn't lead to further injury such as paralysis, treatment must be done correctly. It differs from an unconscious and conscious patient: Conscious: Calm patient and loosen clothing, place neck and spine in neutral position and apply cerival collar if possible, contact 000 Unconscious: DRSABCD, place patient in recovery position and immobilise spine and neck, maintain open airway, contact 000", "Medical Referral", "A patient needs to be referred to professional medical serivces if either CPR needed to be performed or a serious conditons such a spine injury or heart attack is suspected. When informing 000, try to remember answer questions such as: - What happend? - How many casualties? - What injuries have they sustained? - What action have you taken? - What is the location" ]
+    engine = pyttsx3.init()
+    # engine.say() can only read up to 2-3 variables, for loop runs through the array so that all variables can be read
+    for i in lessonpage_1_content:
+        engine.say(i)
+        engine.runAndWait()
+
+# reads lesson 2
+def lessonpage_2_tts():
+    # placing all text from widgets in an array
+    lessonpage_2_content = ["Inquiry Question 2", "Cuts and Lacerations", "The basic treatment for most cuts and lacerations include: - Sterilise wound - Apply pressure to wound - DRSABCD if necessary", "Fractures and Dislocations", "The basic treatment for most cuts and lacerations include: - DRSABCD - Apply sling or splint - Seek further medical attention - Apply Ice", "Head Injuries and Concussions", "The basic treatment for head injuries and concussions include: - DRSABCD - Support head or neck - Lay in lateral position - If skull fracture is suspected, do not apply pressure to head", "Burns", "The basic treatment for burns include: - Remove the casualty from the danger (fire, electrical wire) - DRSABCD - Hold Burnt are under cool running water - Remove any jewellery or clothing if its not stuck to skin - Do not break blisters or apply creams or dressings", "Chest Injuries", "Chest injuries can range from bruised or fractured ribs to lung injuries. The basic treatment for chest injuries include: - Place in a comfortable position - Encourage shallow breathing - Pad the injured area - Seek urgent medical advice", "Heart Attack and Stroke", "Heart attacks and strokes are life threatening conditions where blood supply is blocked to the heart and brain. When adressing a patient experiencing a heart attack or stroke, the best treatment is DRSABCD and seeking medical help", "Asthma", "Asthma is a conditon characterised by breathing difficulties due to the constriction of airways in the lungs. The basic treatment for asthma include: - Assisting with medication (puffer) - Monitor Breathing - Provide water to drink - Encourage controlled and relaxed breathing", "Diabetes", "Diabetes is a conditon where the body is unable to produce or regulate the insulin required to maintain regualar blood sugar levels. There are two types. Hypogycaemia (low blood sugar) and Hyperglycaemia (high blood sugar). The basic treatment for HYPOGLYCAEMIA includes: - DRSABCD - If conscious, administer glucose or a drink The basic treatment for HYPERGLYCAEMIA is: - DRSABCD - If conscious, allow for the self administration of insulin", "Epileptic Seizures", "Characterised by wild uncontrollled spasms of the body, the basic treatment for epileptic seizures include: - DRSABCD - Lateral recovery position - Remove dangerous objects around patient - Do not attempt to restrain patient", "Anaphylaxis", "Anaphylaxis is a severe allergic reaction to an allergen (such as nuts or bee stings). The basic treatment for anaphylaxis is: - DRSABCD - Remove the trigger - Administer Epipen - Seek Medical Help", "Poisons", "Poisoning should be handled with DRSABCD, but also the type of poison should be identified as well. The type of poison determines whether or not vomiting should be induced: - If substance is unknown or corrosive do not induce vomiting - If substance is medicinal or general, induce vomiting", "Bites and Stings", "The treatment for bites and stings differs on the animals that caused it. Generally the treatment for SNAKE BITES includes: - DRSABCD - Apply a pressure immobilisation bandage - Do not elevate - Call for medical help The basic treatment for INSECT BITES includes: - Remove stinger by scraping or flicking - Apply ice - Monitor for allergic reactions", "Hyperthermia", "Hyperthermia is an over exposure to heat. It can be characterised as heat stroke or heat exhaustion. The treatment for hyperthermia includes - DRSABCD - Rest in shade - Provide plenty of water - Cool the body with ice and wet towels", "Hypothermia", "Hypothermia is an over exposure to the cold. The basic treatment for hypothermia includes: - DRSABCD - Protect from the elements (wind, rain) - Remove any wet clothing and replace with warm blankets - Do not use artificial heating measures"]
+    engine = pyttsx3.init()
+    # engine.say() can only read up to 2-3 variables, for loop runs through the array so that all variables can be read
+    for i in lessonpage_2_content:
+        engine.say(i)
+        engine.runAndWait()
+
+# reads lesson 3
+def lessonpage_3_tts():
+    # placing all text from widgets in an array
+    lessonpage_3_content = ["Inquiry Question 3", "Traffic Accidents", "When a rescuer arrives at a traffic accidents, strategies to help manage the situation and prevent further harm include: - Turning hazard lights on - sending a person up the road to warn traffic - Turn Ignition off - Light area with low beam if incident occurred at night - Contact medical help or roadside assistance", "Water Environment", "When performing a rescue in a water environment, a rescuer must be aware of: - Their own physical limitations - changes in weather - Hazardous objects under the water - Water temperature Protective strategies include: - Using ropes, branches, floatation devices - Sending for help immediately - Ensuring you can perform rescue without putting self at risk", "Electricity", "When performing a rescue in an environment with a live wire, strategies that should be utilised include: - Not touching objects that are in contact with electrical source - Turning off electricity at source - Not immediately touching and treating patient", "HIV, AIDS and Blood Borne Diseases", "HIV, AIDs and Blood Borne Diseases(hepatitis a, b, c) are diseases that can be transmitted during first aid treatment through contact with bodily fluids such as: - blood - semen - faces - mucus - vomit - saliva To prevent transmission, strategies that can be used include: - Using gloves - Cover casualty face with face mask before CPR - Wash hands before and after treatment", "Legal Implications", "In regard to First Aid, in law you face no litigation: - If you do not administer first aid to a casualty - If you use excessive force (appropriately) - If treatment was unconsensual (patient was unconscious)", "Debriefing", "DEBRIEFING is the process of obtaining information about the incident in which first aid was required. The rescuer will have to answer questions about what happened and describe the nature of the incident COUNSELLING is defined as services designed to help rescuers deal with the trauma experiences during treatment. If left untreated, rescuers can suffer from anxiety and depression"]
+    engine = pyttsx3.init()
+    # engine.say() can only read up to 2-3 variables, for loop runs through the array so that all variables can be read
+    for i in lessonpage_3_content:
+        engine.say(i)
+        engine.runAndWait()
+
+# reads scenario 1 description
+def scenario_1_description_tts():
+    engine = pyttsx3.init()
+    engine.say("Scenario 1 Description, Johnny was playing near the lit gas stove. As he jumped around he leant over the stove and touched the open flame with his right arm. It appears as red and rashy and Johnny complains of an intense, sharp pain. He then passes out from exhaustion.")
+    engine.runAndWait()
+
+# reads scenario 1 questions
+def scenario_1_questions_tts():
+    scenario_1_questions = ["1) What Primary Injury has Johhny Suffered?", "a) Heart Attack b) Hyperthermia c) General Burns d) Shock", "2) How should the Primary injury be treated?", "a) Epipen b) Running hands under Cool Water c) Immediate Bandaging d) Lotions and Oils", "3) As Johnny has passed out, what is the first priority?", "a) Tend to Primary Injury b) Roll into Recovery Position c) Check for Breathing d) Turn off Stove", "4) Gas and smoke begin to fill the room, How should Johnny be carried out?", "a) Chair Lift Method b) Four-Handed Seat d) Any method is applicable d) Drag Method", "5) Is Medical Referal Necessary?", "a) Yes, in all cases b) No, there is no reason to c) Decided by Patient d) Unsure", "6) You were the only person around when Johhny got injured, Are you legally obliged to assist?", "a) Yes b) No c) If it were a situation of life or death d) Unsure"]
+    engine = pyttsx3.init()
+    for i in scenario_1_questions:
+        engine.say(i)
+        engine.runAndWait()
+
+# reads scenario 2 description
+def scenario_2_description_tts():
+    engine = pyttsx3.init()
+    engine.say("Scenario 2 Description, You are on a walking track at a park when you notice a young girl yelling for help. Upon inspection, you notice that she has two identical punctures next to each other on her leg.The area surrounding it has gone red and puffy.She says she cannot walk, and says the pain is immense. There are visible stingers protruding from the punctures.")
+    engine.runAndWait()
+
+# reads scenario 2 questions
+def scenario_2_questions_tts():
+    scenario_2_questions = [ "1) What is the girl's injury?", "a) Snake Bite b) Insect Sting c) Bleeding (stabbed) d) Leg Fracture", "2) Due to the puffiness and rashes around the wound what else may have occurred?", "a) Anaphylactic Reaction b) Burns c) Bruising d) Nervous Response", "3) How would you first treat the primary injury?", "a) Wetten Wound b) Bandage Wound c) Remove the Stingers d) Apply Blister Cream", "4) What medical instrument may be used in this treatment?", "a) Green Whistle b) Surgical Knife c) Medical Brush d) Epipen", "5) Assume the girl passes out, what should you do?", "a) Check for Breathing b) Check Pulse c) Shake Girl Awake Call Out for Help", "6) She regains consciousness and you call 000 for help, what part of DRSABCD is this?", "a) Danger b) Response c) Send for Help d) Airways"]
+    engine = pyttsx3.init()
+    for i in scenario_2_questions:
+        engine.say(i)
+        engine.runAndWait()
+
+
+# reads scenario 3 description
+def scenario_3_description_tts():
+    engine = pyttsx3.init()
+    engine.say("Scenario 3 Description" + "You are out near a lake during winter, when you notice a man has fallen in. He manages to get out but is shivering and battling consciousness At this point in time it is also raining. You are the only person around at the time.")
+    engine.runAndWait()
+
+# reads scenario 3 questions
+def scenario_3_questions_tts():
+    scenario_3_questions = ["1) What condition can be associated with this man?", "a) Hyperthermia b) Hypothermia c) Coldstroke d) Shock", "2) What is the First Step of Treatment?", "a) Cover Man in Warm Garments b) Check his Breathing c) Seek Shelter from Rain d) Ask him How This Happened", "3) From Question 2, What Part of DRSABCD is this?", "a) Danger b) Response c) Breathing d) CPR", "4) What Treatment is Most Appropriate?", "a) Provide Blankets and Garments b) Provide a Lighter c) Provide Cool Water d) Provide Electric Heating", "5) The patient seems to still be struggling, but breathing is regular, is CPR necessary?", "a) Yes b) No c) Ask the Patient d) Unsure", "What else can be done for the patient?", "a) Encourage Passive Movement b) Directly Applying Heat c) Remove Wet Clothing d) Wrap Yourself Around Patient"]
+    engine = pyttsx3.init()
+    for i in scenario_3_questions:
+        engine.say(i)
+        engine.runAndWait()
 
 # Widgets for Home Page
-
 
 title_label = CTkLabel(homepage, text="PDHPE Revision System", font=("Arial bold", 25))
 title_label.place(x=275, y=25)
@@ -161,18 +266,24 @@ quiz_button.place(x=305, y=300)
 scenario_button = CTkButton(homepage, width=200, height=100, text="Scenario", font=("Arial bold", 15), command = scenario)
 scenario_button.place(x=305, y=450)
 
-# Widgets for Lesson Page
+homepage_tts_button = CTkButton(homepage, text = "Read Page Aloud", command = homepage_tts, width=50, height=50)
+homepage_tts_button.place(x=600, y=200)
+
+# Widgets for Lesson Page (lesson list)
 lessonpage_title = CTkLabel(lessonpage, text="Lesson List", font=("arial", 25))
 lessonpage_title.place(x=350, y=25)
 
-lesson_1 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 1", command=begin_lesson_1)
+lesson_1 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 1: What are the main priorities for assessment and management of first aid patients?", command=begin_lesson_1)
 lesson_1.place(x=0, y=200)
-lesson_2 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 2", command=begin_lesson_2)
+lesson_2 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 2: How should the major types of injuries and medical conditions be managed in first aid situations?", command=begin_lesson_2)
 lesson_2.place(x=0, y=300)
-lesson_3 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 3", command=begin_lesson_3)
+lesson_3 = CTkButton(lessonpage, width=800, height=100, text="Inquiry Question 3: What does the individual need to consider in administering first aid?", command=begin_lesson_3)
 lesson_3.place(x=0, y=400) 
 
-# Widgets for Quiz Page
+lessonpage_tts_button = CTkButton(lessonpage, text = "Read Page Aloud", command = lessonpage_tts)
+lessonpage_tts_button.place(x=550, y = 25)
+
+# Widgets for Quiz Page (quiz list)
 quizpage_title = CTkLabel(quizpage, text="Quiz List", font=("arial", 25))
 quizpage_title.place(x=350, y=25)
 
@@ -183,7 +294,10 @@ quiz_2.place(x=0, y=300)
 quiz_3 = CTkButton(quizpage, width=800, height=100, text="Inquiry Question 3 Quiz", command= begin_quiz_3)
 quiz_3.place(x=0, y=400) 
 
-# Widgets for Scenario Page
+quizpage_tts_button = CTkButton(quizpage, text = "Read Page Aloud", command = quizpage_tts)
+quizpage_tts_button.place(x=550, y = 25)
+
+# Widgets for Scenario Page (scenario list)
 
 scenariopage_title = CTkLabel(scenariopage, text="Scenario List", font=("arial", 25))
 scenariopage_title.place(x=350, y=25)
@@ -195,8 +309,11 @@ scenario_2.place(x=0, y=300)
 scenario_3 = CTkButton(scenariopage, width=800, height=100, text="Scenario 3", command= begin_scenario_3)
 scenario_3.place(x=0, y=400) 
 
+scenariopage_tts_button = CTkButton(scenariopage, text = "Read Page Aloud", command = scenariopage_tts)
+scenariopage_tts_button.place(x = 550, y =25)
 
-#scrollbars
+
+# scrollbars for lessonpages
 
 scroll_frame_1 = customtkinter.CTkScrollableFrame(lessonpage_1)
 scroll_frame_1.pack(fill = BOTH, expand = 1)
@@ -209,7 +326,7 @@ scroll_frame_3.pack(fill = BOTH, expand = 1)
 
 
 
-# Lesson 1
+# Lesson 1 text
 
 lesson_1_title = CTkLabel(scroll_frame_1, text = "Inquiry Question 1 Lesson", font=("arial bold", 20),justify ="left", anchor = W )
 lesson_1_title.pack()
@@ -219,7 +336,6 @@ priority_content.pack()
 
 DRSABCD_title = CTkLabel(scroll_frame_1, text = "DRSABCD", font=("arial bold", 14), justify ="left", anchor = W)
 DRSABCD_title.pack()
-
 
 DRSABCD_content = CTkLabel(scroll_frame_1, text = "The basic life management plan for First Aid is DRSABCD:\n Danger: Remove any elements of danger or future harm\nResponse: Communicate to the casualty using the COWS method. Also involves recovery position (opens airways) \nSend for Help: Contact 000 or 112\n Airways: Clear casualty's airways by scooping any foreign material out of their mouth\n Breathing: Look, listen and feel for breathing\n CPR: If not breathinng then, 30 Chest Compressions and 2 breaths\n Defibrillator: A device used when a casualty's heart stops beating", justify="left")
 DRSABCD_content.pack()
@@ -239,8 +355,8 @@ STOP_content.pack()
 bleeding_content = CTkLabel(scroll_frame_1, text = "Bleeding",font=("arial bold", 14))
 bleeding_content.pack()
                             
-bleeding_content = CTkLabel(scroll_frame_1, text = "The Treatment for Bleeding is PER management system which stands for:\n Pressure: Apply direct pressure to the wound using a bandage\n Elevate: Lie patient down and lift injured part above level of the heart\nRest: Do not move injured part (apply bandage at this stage", justify = "left")
-bleeding_content.pack()
+bleeding_title = CTkLabel(scroll_frame_1, text = "The Treatment for Bleeding is PER management system which stands for:\n Pressure: Apply direct pressure to the wound using a bandage\n Elevate: Lie patient down and lift injured part above level of the heart\nRest: Do not move injured part (apply bandage at this stage", justify = "left")
+bleeding_title.pack()
 
 shock_title = CTkLabel(scroll_frame_1, text = "Shock", font=("arial bold", 14))
 shock_title.pack()
@@ -260,7 +376,12 @@ medical_referral_title.pack()
 medical_referral_content = CTkLabel(scroll_frame_1, text="A patient needs to be referred to professional medical serivces if either CPR needed to be performed or a serious conditons\n such a spine injury or heart attack is suspected. When informing 000, try to remember answer questions such as:\n- What happend?\n- How many casualties?\n- What injuries have they sustained?\n- What action have you taken?\n- What is the location", justify="left")
 medical_referral_content.pack()
 
-# Lesson 2
+# Lesson 1 Text to Speech
+
+lessonpage_1_tts_button = CTkButton(scroll_frame_1, text = "Read Page Aloud", command = lessonpage_1_tts)
+lessonpage_1_tts_button.place(x = 0 , y = 0)
+
+# Lesson 2 text
 lesson_2_title = CTkLabel(scroll_frame_2, text = "Inquiry Question 2",font=("arial bold", 20))
 lesson_2_title.pack()
 
@@ -348,7 +469,12 @@ hypothermia_title.pack()
 hypothermia_content = CTkLabel(scroll_frame_2, text = "Hypothermia is an over exposure to the cold. The basic treatment for hypothermia includes:\n- DRSABCD\n- Protect from the elements (wind, rain)\n- Remove any wet clothing and replace with warm blankets\n- Do not use artificial heating measures")
 hypothermia_content.pack()
 
-# Lesson 3
+# Lesson 2 Text to Speech
+
+lessonpage_2_tts_button = CTkButton(scroll_frame_2, text = "Read Page Aloud", command = lessonpage_2_tts)
+lessonpage_2_tts_button.place(x = 0 , y = 0)
+
+# Lesson 3 text
 lesson_3_title = CTkLabel(scroll_frame_3, text = "Inquiry Question 3",font=("arial bold", 20))
 lesson_3_title.pack()
 
@@ -387,6 +513,12 @@ debriefing_and_counselling_title.pack()
 
 debriefing_and_counselling_content = CTkLabel(scroll_frame_3, text="DEBRIEFING is the process of obtaining information about the incident in which first aid was required.\n The rescuer will have to answer questions about what happened and describe the nature of the incident\n COUNSELLING is defined as services designed to help rescuers deal with the trauma experiences during treatment.\n If left untreated, rescuers can suffer from anxiety and depression")
 debriefing_and_counselling_content.pack()
+
+# Lesson 3 Text to Speech
+
+lessonpage_3_tts_button = CTkButton(scroll_frame_3, text = "Read Page Aloud", command = lessonpage_3_tts)
+lessonpage_3_tts_button.place(x=0, y=0)
+
 # Quiz 1 System (including marking)
 
 
@@ -458,14 +590,14 @@ for i in range(4):
     quiz_1_choice_buttons.append(button_1)
 
 # text to speech button for questions
-text_to_speech_1 = CTkButton(quizpage_1, text="speak", command = quiz_1_tts)
+text_to_speech_1 = CTkButton(quizpage_1, text="Read Question Aloud", command = quiz_1_tts)
 text_to_speech_1.pack()
 
-# Create the feedback label
+# Create the feedback label, score label and next buttom
 quiz_1_feedback_label = CTkLabel(quizpage_1,anchor="center")
 quiz_1_feedback_label.pack(pady=10)
 
-quiz_1_score_label = CTkLabel(quizpage_1, text="Score: 0/{}".format(len(quiz_data_1)),anchor="center",)
+quiz_1_score_label = CTkLabel(quizpage_1, text="Score: 0/{}".format(len(quiz_data_1)),anchor="center")
 quiz_1_score_label.pack(pady=10)
 
 quiz_1_next_button = CTkButton(quizpage_1, text="Next", command=next_question_1, state="disabled")
@@ -475,6 +607,7 @@ quiz_1_next_button.pack(pady=10)
 quiz_1_score = 0
 quiz_1_current_question = 0
 
+# Show First Question
 quiz_1_show_question()
 
 # Quiz 2 System (including marking)
@@ -546,14 +679,14 @@ for i in range(4):
     quiz_2_choice_buttons.append(button_2)
 
 # text to speech button for questions
-text_to_speech_2 = CTkButton(quizpage_2, text="speak", command = quiz_2_tts)
+text_to_speech_2 = CTkButton(quizpage_2, text="Read Question Aloud", command = quiz_2_tts)
 text_to_speech_2.pack()
 
-# Create the feedback label
+# Create the feedback label, score label and next button
 quiz_2_feedback_label = CTkLabel(quizpage_2,anchor="center")
 quiz_2_feedback_label.pack(pady=10)
 
-quiz_2_score_label = CTkLabel(quizpage_2, text="Score: 0/{}".format(len(quiz_data_2)),anchor="center",)
+quiz_2_score_label = CTkLabel(quizpage_2, text="Score: 0/{}".format(len(quiz_data_2)),anchor="center")
 quiz_2_score_label.pack(pady=10)
 
 quiz_2_next_button = CTkButton(quizpage_2, text="Next", command=next_question_2, state="disabled")
@@ -563,6 +696,7 @@ quiz_2_next_button.pack(pady=10)
 quiz_2_score = 0
 quiz_2_current_question = 0
 
+# Show First Question
 quiz_2_show_question()
 
 # Quiz 3 System (including marking)
@@ -634,14 +768,14 @@ for i in range(4):
     quiz_3_choice_buttons.append(button_3)
 
 # text to speech button for questions
-text_to_speech_3 = CTkButton(quizpage_3, text="speak", command = quiz_3_tts)
+text_to_speech_3 = CTkButton(quizpage_3, text="Read Question Aloud", command = quiz_3_tts)
 text_to_speech_3.pack()
 
-# Create the feedback label
+# Create the feedback label, score label and next button
 quiz_3_feedback_label = CTkLabel(quizpage_3,anchor="center")
 quiz_3_feedback_label.pack(pady=10)
 
-quiz_3_score_label = CTkLabel(quizpage_3, text="Score: 0/{}".format(len(quiz_data_3)),anchor="center",)
+quiz_3_score_label = CTkLabel(quizpage_3, text="Score: 0/{}".format(len(quiz_data_3)),anchor="center")
 quiz_3_score_label.pack(pady=10)
 
 quiz_3_next_button = CTkButton(quizpage_3, text="Next", command=next_question_3, state="disabled")
@@ -651,6 +785,7 @@ quiz_3_next_button.pack(pady=10)
 quiz_3_score = 0
 quiz_3_current_question = 0
 
+# Show First Question
 quiz_3_show_question()
 
 # widgets for scenario 1
@@ -660,6 +795,14 @@ scenario_1_description_title.place(x = 15, y = 10)
 
 scenario_1_description = CTkLabel(scenariopage_1, text = "Johnny was playing near the lit gas stove.\nAs he jumped around he leant over the stove and touched the open flame\nwith his right arm. It appears as red and rashy and Johnny complains\nof an intense, sharp pain. He then passes out from exhaustion." )
 scenario_1_description.place( x = 10, y = 50)
+
+# scenario 1 text to speech buttons
+
+scenario_1_description_button = CTkButton(scenariopage_1, text = "Read Scenario Description Aloud", command = scenario_1_description_tts)
+scenario_1_description_button.place(x = 550, y = 50 )
+
+scenario_1_questions_tts_button = CTkButton(scenariopage_1, text = "Read Questions Aloud", command = scenario_1_questions_tts)
+scenario_1_questions_tts_button.place(x = 550, y = 100)
 
 # scenario 1 question 1 widgets
 
@@ -701,8 +844,7 @@ scenario_1_question_4_title.place(x = 260, y = 340)
 
 scenario_1_question_4_choices = CTkLabel(scenariopage_1, text = "a) Chair Lift Method\nb) Four-Handed Seat\nd) Any method is applicable\nd) Drag Method")
 scenario_1_question_4_choices.place(x = 280, y = 375)
-                                
-                                
+                                                            
 scenario_1_question_4_entry = CTkEntry(scenariopage_1, width = 100)
 scenario_1_question_4_entry.place(x = 305, y = 445)
 
@@ -741,7 +883,7 @@ image_label_1.place(x=650, y=200)
 def scenario_1_marking():
     global scenario_1_score
     scenario_1_score = 0
-    # checks if inputs to answers are a b c or d, if not an error comes up 
+    # checks if inputs to answers are a b c or d, if not an error comes up and stops marking
     valid_answers = {"a", "b", "c", "d", ""}
     for i in {scenario_1_question_1_entry, scenario_1_question_2_entry, scenario_1_question_3_entry, scenario_1_question_4_entry, scenario_1_question_5_entry, scenario_1_question_6_entry}:
         current_answer = i.get()
@@ -812,6 +954,14 @@ scenario_2_description_title.place(x = 15, y = 10)
 
 scenario_2_description = CTkLabel(scenariopage_2, text = "You are on a walking track at a park when you notice a young girl yelling for help.\nUpon inspection, you notice that she has two identical punctures next\n to eachother on her leg.The area surrounding it has gone red and puffy.\nShe says she cannot walk, and says the pain is immense.\n There are visible stingers protruding from the punctures." )
 scenario_2_description.place( x = 10, y = 50)
+
+# scenario 1 text to speech buttons
+
+scenario_2_description_button = CTkButton(scenariopage_2, text = "Read Scenario Description Aloud", command = scenario_2_description_tts)
+scenario_2_description_button.place(x = 550, y = 50 )
+
+scenario_2_questions_tts_button = CTkButton(scenariopage_2, text = "Read Questions Aloud", command = scenario_2_questions_tts)
+scenario_2_questions_tts_button.place(x = 550, y = 100)
 
 
 # scenario 2 question 1 widgets
@@ -896,7 +1046,7 @@ image_label_2.place(x=650, y=240)
 def scenario_2_marking():
     global scenario_2_score
     scenario_2_score = 0
-    # checks if inputs to answers are a b c or d, if not an error comes up 
+    # checks if inputs to answers are a b c or d, if not an error comes up and stops marking 
     valid_answers = {"a", "b", "c", "d", ""}    
     for i in {scenario_2_question_1_entry, scenario_2_question_2_entry, scenario_2_question_3_entry, scenario_2_question_4_entry, scenario_2_question_5_entry, scenario_2_question_6_entry}:
         current_answer = i.get()
@@ -959,10 +1109,16 @@ scenario_2_submit.place(x = 600, y = 620)
 scenario_3_description_title = CTkLabel(scenariopage_3, text = "Scenario 3 Description:", font = ("arial bold", 20))
 scenario_3_description_title.place(x = 15, y = 10)
 
-
 scenario_3_description = CTkLabel(scenariopage_3, text = " You are out near a lake during winter, when you notice a man has fallen\nin. He manages to get out but is shivering and battling consciousness\n At this point in time it is also raining. You are the only person around at the time." )
 scenario_3_description.place( x = 10, y = 50)
 
+# scenario 1 text to speech buttons
+
+scenario_3_description_button = CTkButton(scenariopage_3, text = "Read Scenario Description Aloud", command = scenario_3_description_tts)
+scenario_3_description_button.place(x = 550, y = 50 )
+
+scenario_3_questions_tts_button = CTkButton(scenariopage_3, text = "Read Questions Aloud", command = scenario_3_questions_tts)
+scenario_3_questions_tts_button.place(x = 550, y = 100)
 
 # scenario 3 question 1 widgets
 
@@ -1048,7 +1204,7 @@ image_label_3.place(x=650, y=240)
 def scenario_3_marking():
     global scenario_3_score
     scenario_3_score = 0
-    # checks if inputs to answers are a b c or d, if not an error comes up 
+    # checks if inputs to answers are a b c or d, if not an error comes up and stops marking 
     valid_answers = {"a", "b", "c", "d", ""}
     for i in {scenario_3_question_1_entry, scenario_3_question_2_entry, scenario_3_question_3_entry, scenario_3_question_4_entry, scenario_3_question_5_entry, scenario_3_question_6_entry}:
         current_answer = i.get()
@@ -1106,8 +1262,6 @@ def scenario_3_marking():
 scenario_3_submit = CTkButton(scenariopage_3, text = "Submit", command = scenario_3_marking)
 scenario_3_submit.place(x = 600, y = 620)
 
-
-
 # menubar
 
 menubar = Menu(root)
@@ -1116,12 +1270,10 @@ root.configure(menu=menubar)
 menuhome = Menu(menubar, tearoff = 0)
 menusize = Menu(menubar, tearoff = 0)
 menutheme = Menu(menubar, tearoff = 0)
-menutranslate = Menu(menubar, tearoff = 0)
 
 menubar.add_cascade(label="Home", menu=menuhome)
 menubar.add_cascade(label="Size", menu=menusize)
 menubar.add_cascade(label="Theme", menu=menutheme)
-menubar.add_cascade(label="Translate", menu=menutranslate)
 
 # dropdowns for menubars
 
