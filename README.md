@@ -37,3 +37,7 @@ Changed quiz format so that each question would have the entire page to itself. 
 Commit 8:
 
 Lessons (1-3) were built and completed. As all information would not fit on one page, scrollbars were implemented on each lesson page. Scenarios were completed, with each having their own image and a function that gives an error message when an invalid answer is given. Scenario marking was fixed, before the score wasn't getting incremented properly as += operator was written as =+. Some variable names in the quiz marking systems were changed so that they were more meaningful (intrinsic documentation). Quiz data files were also fixed (some questions were faulty as answers in database were misspelled). Large size function was altered so that the page would fit onto window and widgets would not overlap. The test image (Frog.PNG) was also removed.
+
+Commit 9:
+
+Code was changed so that every page had a button that would read the entirety of the page. As the speech function in python can only read 2-3 arguments, longer texts were put into arrays and the speak function was looped. The lesson titles on the lesson list were also edited so that each one displayed what inquiry question it was providing information for. General cleanup for code, including adding more comments to make future edits and maintenance easier.
