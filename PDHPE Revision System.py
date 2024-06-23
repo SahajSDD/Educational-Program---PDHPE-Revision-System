@@ -4,6 +4,9 @@ import customtkinter
 from PIL import Image, ImageTk
 import tkinter as tk
 import pyttsx3
+from lesson_data_1 import lesson_data_1
+from lesson_data_2 import lesson_data_2
+from lesson_data_3 import lesson_data_3
 from quiz_data_1 import quiz_data_1
 from quiz_data_2 import quiz_data_2
 from quiz_data_3 import quiz_data_3
@@ -22,10 +25,7 @@ quizpage = CTkFrame(root, width = 400, height = 400)
 scenariopage = CTkFrame(root, width = 400, height = 400)
 
 # different lesson pages
-drsabcdpage = CTkFrame(root, width = 400, height = 400)
-movementmethodpage = CTkFrame(root, width = 400, height = 400)
-stoppage = CTkFrame(root, width = 400, height = 400)
-bleedingpage = CTkFrame(root, width = 400, height = 400)
+lessonpage_1 = CTkFrame(root, width = 400, height = 400)
 lessonpage_2 = CTkFrame(root, width = 400, height = 400)
 lessonpage_3 = CTkFrame(root, width = 400, height = 400)
 
@@ -51,7 +51,7 @@ scenario_3_resultpage = CTkFrame(root,width = 400, height = 400)
 
 # resize and move images
 
-def resize_and_move_image_1(new_width_1, new_height_1, new_x_1, new_y_1):
+def resize_and_move_scenario_image_1(new_width_1, new_height_1, new_x_1, new_y_1):
     
     resized_image_1 = Scenario_1_Image.resize((new_width_1, new_height_1))
     
@@ -63,7 +63,7 @@ def resize_and_move_image_1(new_width_1, new_height_1, new_x_1, new_y_1):
     # Move the label to the new position
     image_label_1.place(x=new_x_1, y=new_y_1)
 
-def resize_and_move_image_2(new_width_2, new_height_2, new_x_2, new_y_2):
+def resize_and_move_scenario_image_2(new_width_2, new_height_2, new_x_2, new_y_2):
     resized_image_2 = Scenario_2_Image.resize((new_width_2, new_height_2))
     
     # Update the PhotoImage object
@@ -74,7 +74,7 @@ def resize_and_move_image_2(new_width_2, new_height_2, new_x_2, new_y_2):
     # Move the label to the new position
     image_label_2.place(x=new_x_2, y=new_y_2)
 
-def resize_and_move_image_3(new_width_3, new_height_3, new_x_3, new_y_3):
+def resize_and_move_scenario_image_3(new_width_3, new_height_3, new_x_3, new_y_3):
     resized_image_3 = Scenario_3_Image.resize((new_width_3, new_height_3))
     
     # Update the PhotoImage object
@@ -84,7 +84,32 @@ def resize_and_move_image_3(new_width_3, new_height_3, new_x_3, new_y_3):
     
     # Move the label to the new position
     image_label_3.place(x=new_x_3, y=new_y_3)
+
+# commands for theme
+
+def dark_theme():
+    set_appearance_mode("dark")
+    bg_light_label_homepage.place_forget()
+    bg_light_label_lessonpage.place_forget() 
+    bg_light_label_quizpage.place_forget() 
+    bg_light_label_scenariopage.place_forget()   
+    bg_dark_label_homepage.place(x=0, y=0)
+    bg_dark_label_lessonpage.place(x = 0, y = 0)
+    bg_dark_label_quizpage.place(x = 0, y = 0)
+    bg_dark_label_scenariopage.place(x = 0, y = 0)
+
     
+def light_theme():
+    set_appearance_mode("light")
+    bg_dark_label_homepage.place_forget()
+    bg_dark_label_lessonpage.place_forget()
+    bg_dark_label_quizpage.place_forget()
+    bg_dark_label_scenariopage.place_forget()
+    bg_light_label_homepage.place(x=0, y=0)
+    bg_light_label_lessonpage.place(x=0, y=0)
+    bg_light_label_quizpage.place(x=0, y=0)
+    bg_light_label_scenariopage.place(x=0, y=0)
+
 
 # commands for size
 
@@ -93,27 +118,27 @@ def small():
     set_widget_scaling(0.75)
     root.minsize(600, 525)
     root.geometry("350x500")
-    resize_and_move_image_1(200, 200, 500, 200)
-    resize_and_move_image_2(200, 200, 500, 200)
-    resize_and_move_image_3(200, 200, 500, 200)
+    resize_and_move_scenario_image_1(200, 200, 500, 200)
+    resize_and_move_scenario_image_2(200, 200, 500, 200)
+    resize_and_move_scenario_image_3(200, 200, 500, 200)
 
 # Medium Size Function
 def medium():
     set_widget_scaling(1.0)
     root.minsize(800, 700)
     root.geometry("800x700")
-    resize_and_move_image_1(300, 300, 650, 200)
-    resize_and_move_image_2(300, 300, 650, 200)
-    resize_and_move_image_3(300, 300, 650, 200)
+    resize_and_move_scenario_image_1(300, 300, 650, 200)
+    resize_and_move_scenario_image_2(300, 300, 650, 200)
+    resize_and_move_scenario_image_3(300, 300, 650, 200)
 
 # Large Size Function
 def large():
     set_widget_scaling(1.05)
     root.minsize(850, 750)
     root.geometry("850x750")
-    resize_and_move_image_1(350, 350, 675, 200)
-    resize_and_move_image_2(350, 350, 675, 200)
-    resize_and_move_image_3(350, 350, 675, 200)
+    resize_and_move_scenario_image_1(350, 350, 675, 200)
+    resize_and_move_scenario_image_2(350, 350, 675, 200)
+    resize_and_move_scenario_image_3(350, 350, 675, 200)
 
 # Switching Pages
 
@@ -156,7 +181,7 @@ def scenario():
 # opens lesson 1 page
 def begin_lesson_1():
     lessonpage.pack_forget()
-    drsabcdpage.pack(fill="both", expand = 1)
+    lessonpage_1.pack(fill="both", expand = 1)
 
 # opens lesson 2 page
 def begin_lesson_2():
@@ -309,15 +334,29 @@ def quizpage_to_homepage():
 def quiz_1_to_quizpage():
     quizpage_1.pack_forget()
     quizpage.pack(fill="both", expand = 1)
+    global quiz_1_score, quiz_1_current_question
+    quiz_1_score = 0
     quiz_1_current_question = 0
+    quiz_1_score_label.configure(text="Score: 0/{}".format(len(quiz_data_1)))
+    quiz_1_show_question()
 
 def quiz_2_to_quizpage():
     quizpage_2.pack_forget()
     quizpage.pack(fill="both", expand = 1)
+    global quiz_2_score, quiz_2_current_question
+    quiz_2_score = 0
+    quiz_2_current_question = 0
+    quiz_2_score_label.configure(text="Score: 0/{}".format(len(quiz_data_2)))
+    quiz_2_show_question()
 
 def quiz_3_to_quizpage():
     quizpage_3.pack_forget()
     quizpage.pack(fill="both", expand = 1)
+    global quiz_3_score, quiz_3_current_question
+    quiz_3_score = 0
+    quiz_3_current_question = 0
+    quiz_3_score_label.configure(text="Score: 0/{}".format(len(quiz_data_3)))
+    quiz_3_show_question()
     
 def scenariopage_to_homepage():
     scenariopage.pack_forget()
@@ -335,6 +374,40 @@ def scenario_3_to_scenariopage():
     scenariopage_3.pack_forget()
     scenariopage.pack(fill="both", expand = 1)
 
+# backgrounds
+
+# dark backgrounds
+
+bg_dark = Image.open("Black First Aid Logo.png").resize((1100, 1100))
+bg_dark_tk = ImageTk.PhotoImage(bg_dark)
+
+bg_dark_label_homepage = CTkLabel(homepage, text = "", image = bg_dark_tk)
+
+bg_dark_label_lessonpage = CTkLabel(lessonpage, text = "", image = bg_dark_tk)
+
+bg_dark_label_quizpage = CTkLabel(quizpage, text = "", image = bg_dark_tk)
+
+bg_dark_label_scenariopage = CTkLabel(scenariopage, text = "", image = bg_dark_tk)
+
+# light backgrounds
+
+bg_light = Image.open("speech_icon.png").resize((1100, 1100))
+bg_light_tk = ImageTk.PhotoImage(bg_light)
+
+bg_light_label_homepage = CTkLabel(homepage, text = "", image = bg_light_tk)
+
+bg_light_label_lessonpage = CTkLabel(lessonpage, text = "", image = bg_light_tk)
+
+bg_light_label_quizpage = CTkLabel(quizpage, text = "", image = bg_light_tk)
+
+bg_light_label_scenariopage = CTkLabel(scenariopage, text = "", image = bg_light_tk)
+
+# dark theme is default
+dark_theme()
+
+# speech icon image for text to speech
+tts_icon = Image.open("speech_icon.png").resize((20, 20))
+image_tk_4 = ImageTk.PhotoImage(tts_icon)
 
 # Widgets for Home Page
 
@@ -353,38 +426,38 @@ quiz_button.place(x=305, y=300)
 scenario_button = CTkButton(homepage, width=200, height=100, text="Scenario", font=("Arial bold", 15), command = scenario)
 scenario_button.place(x=305, y=450)
 
-homepage_tts_button = CTkButton(homepage, text = "Read Page Aloud", command = homepage_tts, width=50, height=50)
+homepage_tts_button = CTkButton(homepage, text = "", image = image_tk_4, command = homepage_tts, width=50, height=50)
 homepage_tts_button.place(x=600, y=200)
 
 # Widgets for Lesson Page (lesson list)
-lessonpage_title = CTkLabel(lessonpage, text="Lesson List", font=("arial", 25))
-lessonpage_title.place(x=350, y=25)
+lessonpage_title = CTkLabel(lessonpage, text="Lesson List", font=("Arial bold", 25),)
+lessonpage_title.place(x=340, y=25)
 
 lesson_1 = CTkButton(lessonpage, width=200, height=100, text="Inquiry Question 1", font=("Arial bold", 15), command=begin_lesson_1)
 lesson_1.place(x=305, y=150)
-lesson_2 = CTkButton(lessonpage, width=200, height=100, text="Inquiry Question 2:", font=("Arial bold", 15), command=begin_lesson_2)
+lesson_2 = CTkButton(lessonpage, width=200, height=100, text="Inquiry Question 2", font=("Arial bold", 15), command=begin_lesson_2)
 lesson_2.place(x=305, y=300)
 lesson_3 = CTkButton(lessonpage, width=200, height=100, text="Inquiry Question 3", font=("Arial bold", 15), command=begin_lesson_3)
 lesson_3.place(x=305, y=450) 
 
-lessonpage_tts_button = CTkButton(lessonpage, text = "Read Page Aloud", command = lessonpage_tts)
+lessonpage_tts_button = CTkButton(lessonpage, text = "", image = image_tk_4, command = lessonpage_tts)
 lessonpage_tts_button.place(x=550, y = 25)
 
 lessonpage_back_button = CTkButton(lessonpage, text = "Back", command = lessonpage_to_homepage)
 lessonpage_back_button.place(x = 50, y = 600)
 
 # Widgets for Quiz Page (quiz list)
-quizpage_title = CTkLabel(quizpage, text="Quiz List", font=("arial", 25))
+quizpage_title = CTkLabel(quizpage, text="Quiz List", font=("Arial bold", 25),)
 quizpage_title.place(x=350, y=25)
 
-quiz_1 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 1 Quiz", command= begin_quiz_1)
+quiz_1 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 1 Quiz", font=("Arial bold", 15), command= begin_quiz_1)
 quiz_1.place(x=305, y=150)
-quiz_2 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 2 Quiz", command= begin_quiz_2)
+quiz_2 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 2 Quiz", font=("Arial bold", 15), command= begin_quiz_2)
 quiz_2.place(x=305, y=300)
-quiz_3 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 3 Quiz", command= begin_quiz_3)
+quiz_3 = CTkButton(quizpage, width=200, height=100, text="Inquiry Question 3 Quiz", font=("Arial bold", 15), command= begin_quiz_3)
 quiz_3.place(x=305, y=450) 
 
-quizpage_tts_button = CTkButton(quizpage, text = "Read Page Aloud", command = quizpage_tts)
+quizpage_tts_button = CTkButton(quizpage, text = "", image = image_tk_4, command = quizpage_tts)
 quizpage_tts_button.place(x=550, y = 25)
 
 quizpage_back_button = CTkButton(quizpage, text = "Back", command = quizpage_to_homepage)
@@ -392,90 +465,225 @@ quizpage_back_button.place(x=50, y=600)
 
 # Widgets for Scenario Page (scenario list)
 
-scenariopage_title = CTkLabel(scenariopage, text="Scenario List", font=("arial", 25))
-scenariopage_title.place(x=350, y=25)
+scenariopage_title = CTkLabel(scenariopage, text="Scenario List", font=("Arial bold", 25),)
+scenariopage_title.place(x=330, y=25)
 
-scenario_1 = CTkButton(scenariopage, width=200, height=100, text="Scenario 1", command= begin_scenario_1)
+scenario_1 = CTkButton(scenariopage, width=200, height=100, text="Scenario 1", font=("Arial bold", 15), command= begin_scenario_1)
 scenario_1.place(x=305, y=150)
-scenario_2 = CTkButton(scenariopage, width=200, height=100, text="Scenario 2", command= begin_scenario_2)
+scenario_2 = CTkButton(scenariopage, width=200, height=100, text="Scenario 2", font=("Arial bold", 15), command= begin_scenario_2)
 scenario_2.place(x=305, y=300)
-scenario_3 = CTkButton(scenariopage, width=200, height=100, text="Scenario 3", command= begin_scenario_3)
+scenario_3 = CTkButton(scenariopage, width=200, height=100, text="Scenario 3", font=("Arial bold", 15), command= begin_scenario_3)
 scenario_3.place(x=305, y=450) 
 
-scenariopage_tts_button = CTkButton(scenariopage, text = "Read Page Aloud", command = scenariopage_tts)
+scenariopage_tts_button = CTkButton(scenariopage, image = image_tk_4, text = "", command = scenariopage_tts)
 scenariopage_tts_button.place(x = 550, y =25)
 
 scenariopage_back_button = CTkButton(scenariopage, text = "Back", command = scenariopage_to_homepage)
 scenariopage_back_button.place(x=50, y=600)
 
-# speech icon image for text to speech
-tts_icon = Image.open("speech_icon.png").resize((20, 20))
-image_tk = ImageTk.PhotoImage(tts_icon)
-
 # Lesson 1 text
 
-drsabcd_title = CTkLabel(drsabcdpage, text = "DRSABCD", font = ("arial bold", 25))
-drsabcd_title.place(x = 50, y= 50)
+# Function to display the current lesson title and content
+def lesson_1_show_question():
+    global lesson_1_temp 
+    lesson_1_temp = lesson_data_1[lesson_1_current_lesson]
+    lesson_1_title.configure(text = lesson_1_temp["title"])
+    lesson_1_content.configure(text = lesson_1_temp["content"])
+    lesson_1_tts_button.place(x = 650, y = 50)
 
-drsabcd_content = CTkLabel(drsabcdpage, text = "The basic life management plan for First Aid is DRSABCD:\n\n Danger: Remove any elements of danger or future harm\n\n Response: Communicate to the casualty using the COWS method. Also involves recovery position (opens airways) \n\nSend for Help: Contact 000 or 112\n\n Airways: Clear casualty's airways by scooping any foreign material out of their mouth\n\n Breathing: Look, listen and feel for breathing\n\n CPR: If not breathinng then, 30 Chest Compressions and 2 breaths\n\n Defibrillator: A device used when a casualty's heart stops beating", font=("arial", 15), justify = LEFT)
-drsabcd_content.place(x = 10, y = 200)
+# Function to move to the next question
+def next_lesson_1():
+    global lesson_1_current_lesson
+    lesson_1_current_lesson += 1
+    if lesson_1_current_lesson < len(lesson_data_1):
+        # If there are more lessons, show the next lesson
+        lesson_1_show_question()
+    else:
+        # If there are no more lessons, exit back to lesson list
+        lessonpage_1.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_1_current_lesson = 0
+        lesson_1_show_question()
 
-def drsabcdpage_tts():
+# Function to move to the previous question
+def previous_lesson_1():
+    global lesson_1_current_lesson
+    lesson_1_current_lesson -= 1
+    if lesson_1_current_lesson >= 0:
+        # If there are preivous lessons, show the previous lesson
+        lesson_1_show_question()
+    else:
+        # If there are no previous lessons (at first lesson), exit back to the lesson list
+        lessonpage_1.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_1_current_lesson = 0
+        lesson_1_show_question()
+
+# Reads the current lesson title and content
+def lesson_1_tts():
     engine = pyttsx3.init()
-    engine.say("DRSABCD The basic life management plan for First Aid is DRSABCD:\n\n Danger: Remove any elements of danger or future harm\n\n Response: Communicate to the casualty using the COWS method. Also involves recovery position (opens airways) \n\nSend for Help: Contact 000 or 112\n\n Airways: Clear casualty's airways by scooping any foreign material out of their mouth\n\n Breathing: Look, listen and feel for breathing\n\n CPR: If not breathinng then, 30 Chest Compressions and 2 breaths\n\n Defibrillator: A device used when a casualty's heart stops beating")
+    engine.say(lesson_1_temp)
     engine.runAndWait()
 
-drsabcdpage_tts_button = CTkButton(drsabcdpage, image = image_tk, text = "", compound = LEFT, command = drsabcdpage_tts)
-drsabcdpage_tts_button.place(x = 650, y = 50)
+# Create Lesson Title
+lesson_1_title = CTkLabel(lessonpage_1, text = "", font = ("arial bold", 25))
+lesson_1_title.place(x = 50, y = 50 )
 
-def next_button_1_command():
-    drsabcdpage.pack_forget()
-    movementmethodpage.pack(fill="both", expand = 1)
+# Create Lesson Content
+lesson_1_content = CTkLabel(lessonpage_1, text = "", font=("arial", 18), justify = LEFT)
+lesson_1_content.place(x = 10, y = 200)
 
-next_button_1 = CTkButton(drsabcdpage, text = "Next", command = next_button_1_command)
-next_button_1.place(x = 650, y = 600)
+# Create Next Button, text to speech button and back button
+lesson_1_next_button = CTkButton(lessonpage_1, text = "Next", command = next_lesson_1)
+lesson_1_next_button.place(x = 650, y = 600)
 
-movement_method_title = CTkLabel(movementmethodpage, text = "Movement Methods", font=("arial bold", 25))
-movement_method_title.place(x = 50, y = 50)
+lesson_1_tts_button = CTkButton(lessonpage_1, text = "", image = image_tk_4, command = lesson_1_tts)
+lesson_1_tts_button.pack()
 
-movement_method_content = CTkLabel(movementmethodpage, text="There are four movement methods when moving a casualty, these are:\n\n Drag Method: Used when casualty is unconscious\n\nHuman Crutch: Used when casualty is conscious but cannot walk\n\nFour Handed Seat: Requires two people to cross arms and use as a seat for casualty\n\nChair Lift: Casualty sits on chair and two people lift chair to move", justify = "left", font=("arial", 15))
-movement_method_content.place(x = 10, y = 200)
+lesson_1_back_button = CTkButton(lessonpage_1, text = "Back", command = previous_lesson_1)
+lesson_1_back_button.place(x = 10, y = 600)
 
-def movementmethodpage_tts():
+# initialise current lesson
+lesson_1_current_lesson = 0
+
+# Show first Lesson
+lesson_1_show_question()
+
+# Lesson 2 text
+
+# Function to display the current lesson title and content
+def lesson_2_show_question():
+    global lesson_2_temp
+    lesson_2_temp = lesson_data_2[lesson_2_current_lesson]
+    lesson_2_title.configure(text = lesson_2_temp["title"])
+    lesson_2_content.configure(text = lesson_2_temp["content"])
+    lesson_2_tts_button.place(x = 650, y = 50)
+
+# Function to move to the next question
+def next_lesson_2():
+    global lesson_2_current_lesson
+    lesson_2_current_lesson += 1
+    if lesson_2_current_lesson < len(lesson_data_2):
+        # If there are more lessons, show the next lesson
+        lesson_2_show_question()
+    else:
+        # If there are no more lessons, exit back to lesson list
+        lessonpage_2.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_2_current_lesson = 0
+        lesson_2_show_question()
+
+# Function to move to the previous question
+def previous_lesson_2():
+    global lesson_2_current_lesson
+    lesson_2_current_lesson -= 1
+    if lesson_2_current_lesson >= 0:
+        # If there are preivous lessons, show the previous lesson
+        lesson_2_show_question()
+    else:
+        # If there are no previous lessons (at first lesson), exit back to the lesson list
+        lessonpage_2.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_2_current_lesson = 0
+        lesson_2_show_question()
+
+# Reads the current lesson title and content
+def lesson_2_tts():
     engine = pyttsx3.init()
-    engine.say("Movement Methods There are four movement methods when moving a casualty, these are:\n\n Drag Method: Used when casualty is unconscious\n\nHuman Crutch: Used when casualty is conscious but cannot walk\n\nFour Handed Seat: Requires two people to cross arms and use as a seat for casualty\n\nChair Lift: Casualty sits on chair and two people lift chair to move")
+    engine.say(lesson_2_temp)
     engine.runAndWait()
 
-movementmethodpage_tts_button = CTkButton(movementmethodpage, image = image_tk, text = "", compound = LEFT, command = drsabcdpage_tts)
-movementmethodpage_tts_button.place(x = 650, y = 50)
+# Create Lesson Title
+lesson_2_title = CTkLabel(lessonpage_2, text = "", font = ("arial bold", 25))
+lesson_2_title.place(x = 50, y = 50 )
 
-def next_button_2_command():
-    movementmethodpage.pack_forget()
-    stoppage.pack(fill="both", expand = 1)
+# Create Lesson Content
+lesson_2_content = CTkLabel(lessonpage_2, text = "", font=("arial", 18), justify = LEFT)
+lesson_2_content.place(x = 20, y = 200)
 
-next_button_2 = CTkButton(movementmethodpage, text = "Next", command = next_button_2_command)
-next_button_2.place(x = 650, y = 600)
+# Create Next Button, text to speech button and back button
+lesson_2_next_button = CTkButton(lessonpage_2, text = "Next", command = next_lesson_2)
+lesson_2_next_button.place(x = 650, y = 600)
 
-stop_title = CTkLabel(stoppage, text = "Movement Methods", font=("arial bold", 25))
-stop_title.place(x = 50, y = 50)
+lesson_2_tts_button = CTkButton(lessonpage_2, text = "", image = image_tk_4, command = lesson_2_tts)
+lesson_2_tts_button.pack()
 
-stop_content = CTkLabel(stoppage, text="There are four movement methods when moving a casualty, these are:\n\n Drag Method: Used when casualty is unconscious\n\nHuman Crutch: Used when casualty is conscious but cannot walk\n\nFour Handed Seat: Requires two people to cross arms and use as a seat for casualty\n\nChair Lift: Casualty sits on chair and two people lift chair to move", justify = "left", font=("arial", 15))
-stop_content.place(x = 10, y = 200)
+lesson_2_back_button = CTkButton(lessonpage_2, text = "Back", command = previous_lesson_2)
+lesson_2_back_button.place(x = 20, y = 600)
 
-def stoppage_tts():
+# initialise current lesson
+lesson_2_current_lesson = 0
+
+# Show first Lesson
+lesson_2_show_question()
+
+# Lesson 3 text
+
+# Function to display the current lesson title and content
+def lesson_3_show_question():
+    global lesson_3_temp
+    lesson_3_temp = lesson_data_3[lesson_3_current_lesson]
+    lesson_3_title.configure(text = lesson_3_temp["title"])
+    lesson_3_content.configure(text = lesson_3_temp["content"])
+    lesson_3_tts_button.place(x = 650, y = 50)
+
+# Function to move to the next question
+def next_lesson_3():
+    global lesson_3_current_lesson
+    lesson_3_current_lesson += 1
+    if lesson_3_current_lesson < len(lesson_data_3):
+        # If there are more lessons, show the next lesson
+        lesson_3_show_question()
+    else:
+        # If there are no more lessons, exit back to lesson list
+        lessonpage_3.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_3_current_lesson = 0
+        lesson_3_show_question()
+
+# Function to move to the previous question
+def previous_lesson_3():
+    global lesson_3_current_lesson
+    lesson_3_current_lesson -= 1
+    if lesson_3_current_lesson >= 0:
+        # If there are preivous lessons, show the previous lesson
+        lesson_3_show_question()
+    else:
+        # If there are no previous lessons (at first lesson), exit back to the lesson list
+        lessonpage_3.pack_forget()
+        lessonpage.pack(fill = BOTH, expand = 1)
+        lesson_3_current_lesson = 0
+        lesson_3_show_question()
+
+# Reads the current lesson title and content
+def lesson_3_tts():
     engine = pyttsx3.init()
-    engine.say("Movement Methods There are four movement methods when moving a casualty, these are:\n\n Drag Method: Used when casualty is unconscious\n\nHuman Crutch: Used when casualty is conscious but cannot walk\n\nFour Handed Seat: Requires two people to cross arms and use as a seat for casualty\n\nChair Lift: Casualty sits on chair and two people lift chair to move")
+    engine.say(lesson_3_temp)
     engine.runAndWait()
 
-movementmethodpage_tts_button = CTkButton(stoppage, image = image_tk, text = "", compound = LEFT, command = stoppage_tts)
-movementmethodpage_tts_button.place(x = 650, y = 50)
+# Create Lesson Title
+lesson_3_title = CTkLabel(lessonpage_3, text = "", font = ("arial bold", 25))
+lesson_3_title.place(x = 50, y = 50 )
 
-def next_button_3_command():
-    stoppage.pack_forget()
-    bleedingpage.pack(fill="both", expand = 1)
+# Create Lesson Content
+lesson_3_content = CTkLabel(lessonpage_3, text = "", font=("arial", 18), justify = LEFT)
+lesson_3_content.place(x = 20, y = 125)
 
-next_button_3 = CTkButton(stoppage, text = "Next", command = next_button_3_command)
-next_button_3.place(x = 650, y = 600)
+# Create Next Button, text to speech button and back button
+lesson_3_next_button = CTkButton(lessonpage_3, text = "Next", command = next_lesson_3)
+lesson_3_next_button.place(x = 650, y = 600)
+
+lesson_3_tts_button = CTkButton(lessonpage_3, text = "", image = image_tk_4, command = lesson_3_tts)
+lesson_3_tts_button.pack()
+
+lesson_3_back_button = CTkButton(lessonpage_3, text = "Back", command = previous_lesson_3)
+lesson_3_back_button.place(x = 30, y = 600)
+
+# initialise current lesson
+lesson_3_current_lesson = 0
+
+# Show first Lesson
+lesson_3_show_question()
 
 # Quiz 1 System (including marking)
 
@@ -548,7 +756,7 @@ for i in range(4):
     quiz_1_choice_buttons.append(button_1)
 
 # text to speech button for questions
-text_to_speech_1 = CTkButton(quizpage_1, text="Read Question Aloud", command = quiz_1_tts)
+text_to_speech_1 = CTkButton(quizpage_1, text="", image = image_tk_4, command = quiz_1_tts)
 text_to_speech_1.pack()
 
 # Create the feedback label, score label and next buttom
@@ -641,7 +849,7 @@ for i in range(4):
     quiz_2_choice_buttons.append(button_2)
 
 # text to speech button for questions
-text_to_speech_2 = CTkButton(quizpage_2, text="Read Question Aloud", command = quiz_2_tts)
+text_to_speech_2 = CTkButton(quizpage_2, text="", image = image_tk_4, command = quiz_2_tts)
 text_to_speech_2.pack()
 
 # Create the feedback label, score label and next button
@@ -736,7 +944,7 @@ for i in range(4):
     quiz_3_choice_buttons.append(button_3)
 
 # text to speech button for questions
-text_to_speech_3 = CTkButton(quizpage_3, text="Read Question Aloud", command = quiz_3_tts)
+text_to_speech_3 = CTkButton(quizpage_3, text="", image = image_tk_4, command = quiz_3_tts)
 text_to_speech_3.pack()
 
 # Create the feedback label, score label and next button
@@ -771,10 +979,10 @@ scenario_1_description.place( x = 10, y = 50)
 
 # scenario 1 text to speech buttons
 
-scenario_1_description_button = CTkButton(scenariopage_1, text = "Read Scenario Description Aloud", command = scenario_1_description_tts)
+scenario_1_description_button = CTkButton(scenariopage_1, text = "Scenario Description", image = image_tk_4, compound = LEFT, command = scenario_1_description_tts)
 scenario_1_description_button.place(x = 550, y = 50 )
 
-scenario_1_questions_tts_button = CTkButton(scenariopage_1, text = "Read Questions Aloud", command = scenario_1_questions_tts)
+scenario_1_questions_tts_button = CTkButton(scenariopage_1, text = "Questions", image = image_tk_4, compound = LEFT, command = scenario_1_questions_tts)
 scenario_1_questions_tts_button.place(x = 550, y = 100)
 
 # scenario 1 question 1 widgets
@@ -933,12 +1141,12 @@ scenario_2_description_title.place(x = 15, y = 10)
 scenario_2_description = CTkLabel(scenariopage_2, text = "You are on a walking track at a park when you notice a young girl yelling for help.\nUpon inspection, you notice that she has two identical punctures next\n to eachother on her leg.The area surrounding it has gone red and puffy.\nShe says she cannot walk, and says the pain is immense.\n There are visible stingers protruding from the punctures." )
 scenario_2_description.place( x = 10, y = 50)
 
-# scenario 1 text to speech buttons
+# scenario 2 text to speech buttons
 
-scenario_2_description_button = CTkButton(scenariopage_2, text = "Read Scenario Description Aloud", command = scenario_2_description_tts)
+scenario_2_description_button = CTkButton(scenariopage_2, text = "Scenario Description", image = image_tk_4, compound = LEFT, command = scenario_2_description_tts)
 scenario_2_description_button.place(x = 550, y = 50 )
 
-scenario_2_questions_tts_button = CTkButton(scenariopage_2, text = "Read Questions Aloud", command = scenario_2_questions_tts)
+scenario_2_questions_tts_button = CTkButton(scenariopage_2, text = "Questions", image = image_tk_4, compound = LEFT, command = scenario_2_questions_tts)
 scenario_2_questions_tts_button.place(x = 550, y = 100)
 
 
@@ -1095,10 +1303,10 @@ scenario_3_description.place( x = 10, y = 50)
 
 # scenario 1 text to speech buttons
 
-scenario_3_description_button = CTkButton(scenariopage_3, text = "Read Scenario Description Aloud", command = scenario_3_description_tts)
+scenario_3_description_button = CTkButton(scenariopage_3, text = "Scenario Description", image = image_tk_4, compound = LEFT, command = scenario_3_description_tts)
 scenario_3_description_button.place(x = 550, y = 50 )
 
-scenario_3_questions_tts_button = CTkButton(scenariopage_3, text = "Read Questions Aloud", command = scenario_3_questions_tts)
+scenario_3_questions_tts_button = CTkButton(scenariopage_3, text = "Questions", image = image_tk_4, compound = LEFT, command = scenario_3_questions_tts)
 scenario_3_questions_tts_button.place(x = 550, y = 100)
 
 # scenario 3 question 1 widgets
@@ -1162,7 +1370,7 @@ scenario_3_question_5_entry.place(x = 20, y = 580)
 
 # scenario 3 question 6 widgets
 
-scenario_3_question_6_title = CTkLabel(scenariopage_3, text = "6) What else can be done for the patient?",font=("arial bold", 12) )
+scenario_3_question_6_title = CTkLabel(scenariopage_3, text = "6) What else can be done for the patient?", font=("arial bold", 12) )
 scenario_3_question_6_title.place(x = 260, y = 485)
 
 scenario_3_question_6_choices = CTkLabel(scenariopage_3, text = "a) Encourage Passive Movement\nb) Directly Applying Heat\nc) Remove Wet Clothing\nd) Wrap Yourself Around Patient")
@@ -1266,8 +1474,8 @@ menusize.add_command(label = "Small", command = small)
 menusize.add_command(label = "Medium", command = medium)
 menusize.add_command(label = "Large", command = large)
 
-menutheme.add_command(label = "Dark", command=lambda: set_appearance_mode("dark"))
-menutheme.add_command(label = "Light", command=lambda: set_appearance_mode("light"))
+menutheme.add_command(label = "Dark", command= dark_theme)
+menutheme.add_command(label = "Light", command= light_theme)
 
 root.resizable(height=False, width=False)
     
