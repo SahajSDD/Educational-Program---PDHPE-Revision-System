@@ -41,3 +41,7 @@ Lessons (1-3) were built and completed. As all information would not fit on one 
 Commit 9:
 
 Code was changed so that every page had a button that would read the entirety of the page. As the speech function in python can only read 2-3 arguments, longer texts were put into arrays and the speak function was looped. The lesson titles on the lesson list were also edited so that each one displayed what inquiry question it was providing information for. General cleanup for code, including adding more comments to make future edits and maintenance easier.
+
+Commit 10:
+
+Errors were found in the scenario section of code, where when different sizes were applied the images did not change size and overlapped with text, this was fixed using a function that would be called when activating each size function. The reworking of lesson pages had also begun, giving each piece of information in each lesson its own page so that it was easier to read and looked more aesthetically pleasing. Back buttons were also added to each page. Before this the user would have to use the home function which would send them to the homepage, whereas the back button only sent the user to the previous page, increasing user accessibility. Also edited the appearance of lesson, quiz, scenario lists to match the home page (achieved through changing button sizes), to improve consistency of the GUI. Also began to change text to speech buttons to buttons with the microphone icon, for user accessibility and aesthetics.
