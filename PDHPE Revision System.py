@@ -870,7 +870,7 @@ def next_question_1():
     else:
         # If all questions have been answered, display the final score and end the quiz
         messagebox.showinfo("Quiz Completed",
-                            "Quiz Completed! Final score: {}/{}".format(quiz_1_score, len(quiz_data_1)))
+                            "Congratulations! Final score: {}/{}".format(quiz_1_score, len(quiz_data_1)))
 
 # Quiz 1 Widgets
 
@@ -965,7 +965,7 @@ def next_question_2():
     else:
         # If all questions have been answered, display the final score and end the quiz
         messagebox.showinfo("Quiz Completed",
-                            "Quiz Completed! Final score: {}/{}".format(quiz_2_score, len(quiz_data_2)))
+                            "Congratulations! Final score: {}/{}".format(quiz_2_score, len(quiz_data_2)))
 
 # Quiz 2 Widgets
 
@@ -1062,7 +1062,7 @@ def next_question_3():
     else:
         # If all questions have been answered, display the final score and end the quiz
         messagebox.showinfo("Quiz Completed",
-                            "Quiz Completed! Final score: {}/{}".format(quiz_3_score, len(quiz_data_3)))
+                            "Congratulations! Final score: {}/{}".format(quiz_3_score, len(quiz_data_3)))
 
 # Quiz 3 Widgets
 
