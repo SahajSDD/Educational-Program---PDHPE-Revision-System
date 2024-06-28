@@ -49,3 +49,7 @@ Errors were found in the scenario section of code, where when different sizes we
 Commit 11:
 
 Edited code so that dark and light themes would also switch between dark and light wallpapers that were images. For these backgrounds, potential images were chosen but nothing is confirmed as of yet as the current options do not go well with the buttons. Functions were also created that would be called when changing sizes that altered the position and size of the scenario images as before they would overlap with text. Code was also edited so that when the user would exit or finish a quiz, when they reentered the same quiz, the score and questions would be reset, this will also have to be done for scenario pages. Lesson pages were also finalised using a similar format to the quiz pages, using an external file that contained lesson that would be imported in the mainprogram and be looped across one page.
+
+Commit 12: 
+
+Finalised background images, dark and light gridlines that mimic a notebook. Makes the code more aesthetic and ergonomic to the user. These backgrounds were now applied to all pages, not just main pages. Removed uneccessary result pages as they were no longer part of the code. Edited code so that after the user finishes and exits a scenario, after they re enter the same scenario, the feedback is reset. Renamed some function names for lessson pages, made more meaningful. Edited code so that when lesson content is read, the \n operator isn't read aloud as well. Made question labels bold, to improve aesthetics and readability.
