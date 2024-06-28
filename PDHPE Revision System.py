@@ -34,11 +34,6 @@ quizpage_1 = CTkFrame(root, width = 400, height = 400)
 quizpage_2 = CTkFrame(root, width = 400, height = 400)
 quizpage_3 = CTkFrame(root, width = 400, height = 400)
 
-# result pages for quizzes
-quiz_1_resultpage = CTkFrame(root, width = 400, height = 400)
-quiz_2_resultpage = CTkFrame(root, width = 400, height = 400)
-quiz_3_resultpage = CTkFrame(root, width = 400, height = 400)
-
 # different scenario pages
 scenariopage_1 = CTkFrame(root, width= 400, height = 400)
 scenariopage_2 = CTkFrame(root, width= 400, height = 400)
@@ -90,25 +85,63 @@ def resize_and_move_scenario_image_3(new_width_3, new_height_3, new_x_3, new_y_3
 def dark_theme():
     set_appearance_mode("dark")
     bg_light_label_homepage.place_forget()
-    bg_light_label_lessonpage.place_forget() 
-    bg_light_label_quizpage.place_forget() 
-    bg_light_label_scenariopage.place_forget()   
+    bg_light_label_lessonpage.place_forget()
+    bg_light_label_lessonpage_1.place_forget()
+    bg_light_label_lessonpage_2.place_forget()
+    bg_light_label_lessonpage_3.place_forget()
+    bg_light_label_quizpage.place_forget()
+    bg_light_label_quizpage_1.place_forget()
+    bg_light_label_quizpage_2.place_forget()
+    bg_light_label_quizpage_3.place_forget()
+    bg_light_label_scenariopage.place_forget()
+    bg_light_label_scenariopage_1.place_forget()
+    bg_light_label_scenariopage_2.place_forget()
+    bg_light_label_scenariopage_3.place_forget()
     bg_dark_label_homepage.place(x=0, y=0)
     bg_dark_label_lessonpage.place(x = 0, y = 0)
+    bg_dark_label_lessonpage_1.place(x = 0, y = 0)
+    bg_dark_label_lessonpage_2.place(x = 0, y = 0)
+    bg_dark_label_lessonpage_3.place(x = 0, y = 0)
     bg_dark_label_quizpage.place(x = 0, y = 0)
+    bg_dark_label_quizpage_1.place(x = 0, y = 0)
+    bg_dark_label_quizpage_2.place(x = 0, y = 0)
+    bg_dark_label_quizpage_3.place(x = 0, y = 0)
     bg_dark_label_scenariopage.place(x = 0, y = 0)
+    bg_dark_label_scenariopage_1.place(x = 0, y = 0)
+    bg_dark_label_scenariopage_2.place(x = 0, y = 0)
+    bg_dark_label_scenariopage_3.place(x = 0, y = 0)
 
     
 def light_theme():
     set_appearance_mode("light")
     bg_dark_label_homepage.place_forget()
     bg_dark_label_lessonpage.place_forget()
+    bg_dark_label_lessonpage_1.place_forget()
+    bg_dark_label_lessonpage_2.place_forget()
+    bg_dark_label_lessonpage_3.place_forget()
     bg_dark_label_quizpage.place_forget()
+    bg_dark_label_quizpage_1.place_forget()
+    bg_dark_label_quizpage_2.place_forget()
+    bg_dark_label_quizpage_3.place_forget()
     bg_dark_label_scenariopage.place_forget()
+    bg_dark_label_scenariopage_1.place_forget()
+    bg_dark_label_scenariopage_2.place_forget()
+    bg_dark_label_scenariopage_3.place_forget()
     bg_light_label_homepage.place(x=0, y=0)
-    bg_light_label_lessonpage.place(x=0, y=0)
-    bg_light_label_quizpage.place(x=0, y=0)
-    bg_light_label_scenariopage.place(x=0, y=0)
+    bg_light_label_lessonpage.place(x = 0, y = 0)
+    bg_light_label_lessonpage_1.place(x = 0, y = 0)
+    bg_light_label_lessonpage_2.place(x = 0, y = 0)
+    bg_light_label_lessonpage_3.place(x = 0, y = 0)
+    bg_light_label_quizpage.place(x = 0, y = 0)
+    bg_light_label_quizpage_1.place(x = 0, y = 0)
+    bg_light_label_quizpage_2.place(x = 0, y = 0)
+    bg_light_label_quizpage_3.place(x = 0, y = 0)
+    bg_light_label_scenariopage.place(x = 0, y = 0)
+    bg_light_label_scenariopage_1.place(x = 0, y = 0)
+    bg_light_label_scenariopage_2.place(x = 0, y = 0)
+    bg_light_label_scenariopage_3.place(x = 0, y = 0)
+
+
 
 
 # commands for size
@@ -146,15 +179,13 @@ def large():
 def home():
     homepage.pack(fill="both", expand = 1)
     lessonpage.pack_forget()
+    lessonpage_1.pack_forget()
     lessonpage_2.pack_forget()
     lessonpage_3.pack_forget()
     quizpage.pack_forget()
     quizpage_1.pack_forget()
     quizpage_2.pack_forget()
     quizpage_3.pack_forget()
-    quiz_1_resultpage.pack_forget()
-    quiz_2_resultpage.pack_forget()
-    quiz_3_resultpage.pack_forget()
     scenariopage.pack_forget()
     scenariopage_1.pack_forget()
     scenariopage_2.pack_forget()
@@ -365,42 +396,126 @@ def scenariopage_to_homepage():
 def scenario_1_to_scenariopage():
     scenariopage_1.pack_forget()
     scenariopage.pack(fill="both", expand = 1)
+    global scenario_1_feedback_1
+    global scenario_1_feedback_2
+    global scenario_1_feedback_3
+    global scenario_1_feedback_4
+    global scenario_1_feedback_5
+    global scenario_1_feedback_6
+    global scenario_1_result_label
+    scenario_1_feedback_1.place_forget()
+    scenario_1_feedback_2.place_forget()
+    scenario_1_feedback_3.place_forget()
+    scenario_1_feedback_4.place_forget()
+    scenario_1_feedback_5.place_forget()
+    scenario_1_feedback_6.place_forget()
+    scenario_1_result_label.place_forget()
+    
+    
+
 
 def scenario_2_to_scenariopage():
     scenariopage_2.pack_forget()
     scenariopage.pack(fill="both", expand = 1)
+    global scenario_2_feedback_1
+    global scenario_2_feedback_2
+    global scenario_2_feedback_3
+    global scenario_2_feedback_4
+    global scenario_2_feedback_5
+    global scenario_2_feedback_6
+    global scenario_2_result_label
+    scenario_2_feedback_1.place_forget()
+    scenario_2_feedback_2.place_forget()
+    scenario_2_feedback_3.place_forget()
+    scenario_2_feedback_4.place_forget()
+    scenario_2_feedback_5.place_forget()
+    scenario_2_feedback_6.place_forget()
+    scenario_2_result_label.place_forget()
 
 def scenario_3_to_scenariopage():
     scenariopage_3.pack_forget()
     scenariopage.pack(fill="both", expand = 1)
+    global scenario_3_feedback_1
+    global scenario_3_feedback_2
+    global scenario_3_feedback_3
+    global scenario_3_feedback_4
+    global scenario_3_feedback_5
+    global scenario_3_feedback_6
+    global scenario_3_result_label
+    scenario_3_feedback_1.place_forget()
+    scenario_3_feedback_2.place_forget()
+    scenario_3_feedback_3.place_forget()
+    scenario_3_feedback_4.place_forget()
+    scenario_3_feedback_5.place_forget()
+    scenario_3_feedback_6.place_forget()
+    scenario_3_result_label.place_forget()
 
 # backgrounds
 
 # dark backgrounds
 
-bg_dark = Image.open("Black First Aid Logo.png").resize((1100, 1100))
+bg_dark = Image.open("Dark Background.png").resize((1100, 1100))
 bg_dark_tk = ImageTk.PhotoImage(bg_dark)
 
 bg_dark_label_homepage = CTkLabel(homepage, text = "", image = bg_dark_tk)
 
 bg_dark_label_lessonpage = CTkLabel(lessonpage, text = "", image = bg_dark_tk)
 
+bg_dark_label_lessonpage_1 = CTkLabel(lessonpage_1, text = "", image = bg_dark_tk)
+
+bg_dark_label_lessonpage_2 = CTkLabel(lessonpage_2, text = "", image = bg_dark_tk)
+
+bg_dark_label_lessonpage_3 = CTkLabel(lessonpage_3, text = "", image = bg_dark_tk)
+
 bg_dark_label_quizpage = CTkLabel(quizpage, text = "", image = bg_dark_tk)
+
+bg_dark_label_quizpage_1 = CTkLabel(quizpage_1, text = "", image = bg_dark_tk)
+
+bg_dark_label_quizpage_2 = CTkLabel(quizpage_2, text = "", image = bg_dark_tk)
+
+bg_dark_label_quizpage_3 = CTkLabel(quizpage_3, text = "", image = bg_dark_tk)
 
 bg_dark_label_scenariopage = CTkLabel(scenariopage, text = "", image = bg_dark_tk)
 
+bg_dark_label_scenariopage_1 = CTkLabel(scenariopage_1, text = "", image = bg_dark_tk)
+
+bg_dark_label_scenariopage_2 = CTkLabel(scenariopage_2, text = "", image = bg_dark_tk)
+
+bg_dark_label_scenariopage_3 = CTkLabel(scenariopage_3, text = "", image = bg_dark_tk)
+
+
 # light backgrounds
 
-bg_light = Image.open("speech_icon.png").resize((1100, 1100))
+bg_light = Image.open("Light Background.jpg").resize((1100, 1100))
 bg_light_tk = ImageTk.PhotoImage(bg_light)
 
 bg_light_label_homepage = CTkLabel(homepage, text = "", image = bg_light_tk)
 
 bg_light_label_lessonpage = CTkLabel(lessonpage, text = "", image = bg_light_tk)
 
+bg_light_label_lessonpage_1 = CTkLabel(lessonpage_1, text = "", image = bg_light_tk)
+
+bg_light_label_lessonpage_2 = CTkLabel(lessonpage_2, text = "", image = bg_light_tk)
+
+bg_light_label_lessonpage_3 = CTkLabel(lessonpage_3, text = "", image = bg_light_tk)
+
 bg_light_label_quizpage = CTkLabel(quizpage, text = "", image = bg_light_tk)
 
+bg_light_label_quizpage_1 = CTkLabel(quizpage_1, text = "", image = bg_light_tk)
+
+bg_light_label_quizpage_2 = CTkLabel(quizpage_2, text = "", image = bg_light_tk)
+
+bg_light_label_quizpage_3 = CTkLabel(quizpage_3, text = "", image = bg_light_tk)
+
 bg_light_label_scenariopage = CTkLabel(scenariopage, text = "", image = bg_light_tk)
+
+bg_light_label_scenariopage_1 = CTkLabel(scenariopage_1, text = "", image = bg_light_tk)
+
+bg_light_label_scenariopage_2 = CTkLabel(scenariopage_2, text = "", image = bg_light_tk)
+
+bg_light_label_scenariopage_3 = CTkLabel(scenariopage_3, text = "", image = bg_light_tk)
+
+
 
 # dark theme is default
 dark_theme()
@@ -484,7 +599,7 @@ scenariopage_back_button.place(x=50, y=600)
 # Lesson 1 text
 
 # Function to display the current lesson title and content
-def lesson_1_show_question():
+def lesson_1_show_lesson():
     global lesson_1_temp 
     lesson_1_temp = lesson_data_1[lesson_1_current_lesson]
     lesson_1_title.configure(text = lesson_1_temp["title"])
@@ -497,13 +612,13 @@ def next_lesson_1():
     lesson_1_current_lesson += 1
     if lesson_1_current_lesson < len(lesson_data_1):
         # If there are more lessons, show the next lesson
-        lesson_1_show_question()
+        lesson_1_show_lesson()
     else:
         # If there are no more lessons, exit back to lesson list
         lessonpage_1.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_1_current_lesson = 0
-        lesson_1_show_question()
+        lesson_1_show_lesson()
 
 # Function to move to the previous question
 def previous_lesson_1():
@@ -511,19 +626,24 @@ def previous_lesson_1():
     lesson_1_current_lesson -= 1
     if lesson_1_current_lesson >= 0:
         # If there are preivous lessons, show the previous lesson
-        lesson_1_show_question()
+        lesson_1_show_lesson()
     else:
         # If there are no previous lessons (at first lesson), exit back to the lesson list
         lessonpage_1.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_1_current_lesson = 0
-        lesson_1_show_question()
+        lesson_1_show_lesson()
 
 # Reads the current lesson title and content
 def lesson_1_tts():
     engine = pyttsx3.init()
-    engine.say(lesson_1_temp)
-    engine.runAndWait()
+    # remove \n newline operators from content so it isn't read out
+    lesson_1_processed_text = lesson_1_temp["content"].replace("\n", ".")
+    # all content to be spoke is put into an array
+    lesson_1_tts_content = [lesson_1_temp["title"], lesson_1_processed_text] 
+    for i in lesson_1_tts_content:
+        engine.say(i) 
+        engine.runAndWait()
 
 # Create Lesson Title
 lesson_1_title = CTkLabel(lessonpage_1, text = "", font = ("arial bold", 25))
@@ -547,12 +667,12 @@ lesson_1_back_button.place(x = 10, y = 600)
 lesson_1_current_lesson = 0
 
 # Show first Lesson
-lesson_1_show_question()
+lesson_1_show_lesson()
 
 # Lesson 2 text
 
 # Function to display the current lesson title and content
-def lesson_2_show_question():
+def lesson_2_show_lesson():
     global lesson_2_temp
     lesson_2_temp = lesson_data_2[lesson_2_current_lesson]
     lesson_2_title.configure(text = lesson_2_temp["title"])
@@ -565,13 +685,13 @@ def next_lesson_2():
     lesson_2_current_lesson += 1
     if lesson_2_current_lesson < len(lesson_data_2):
         # If there are more lessons, show the next lesson
-        lesson_2_show_question()
+        lesson_2_show_lesson()
     else:
         # If there are no more lessons, exit back to lesson list
         lessonpage_2.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_2_current_lesson = 0
-        lesson_2_show_question()
+        lesson_2_show_lesson()
 
 # Function to move to the previous question
 def previous_lesson_2():
@@ -579,19 +699,24 @@ def previous_lesson_2():
     lesson_2_current_lesson -= 1
     if lesson_2_current_lesson >= 0:
         # If there are preivous lessons, show the previous lesson
-        lesson_2_show_question()
+        lesson_2_show_lesson()
     else:
         # If there are no previous lessons (at first lesson), exit back to the lesson list
         lessonpage_2.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_2_current_lesson = 0
-        lesson_2_show_question()
+        lesson_2_show_lesson()
 
 # Reads the current lesson title and content
 def lesson_2_tts():
     engine = pyttsx3.init()
-    engine.say(lesson_2_temp)
-    engine.runAndWait()
+    # remove \n newline operators from content so it isn't read out
+    lesson_2_processed_text = lesson_2_temp["content"].replace("\n", ".")
+    # all content to be spoke is put into an array
+    lesson_2_tts_content = [lesson_1_temp["title"], lesson_2_processed_text] 
+    for i in lesson_2_tts_content:
+        engine.say(i) 
+        engine.runAndWait()
 
 # Create Lesson Title
 lesson_2_title = CTkLabel(lessonpage_2, text = "", font = ("arial bold", 25))
@@ -615,12 +740,12 @@ lesson_2_back_button.place(x = 20, y = 600)
 lesson_2_current_lesson = 0
 
 # Show first Lesson
-lesson_2_show_question()
+lesson_2_show_lesson()
 
 # Lesson 3 text
 
 # Function to display the current lesson title and content
-def lesson_3_show_question():
+def lesson_3_show_lesson():
     global lesson_3_temp
     lesson_3_temp = lesson_data_3[lesson_3_current_lesson]
     lesson_3_title.configure(text = lesson_3_temp["title"])
@@ -633,13 +758,13 @@ def next_lesson_3():
     lesson_3_current_lesson += 1
     if lesson_3_current_lesson < len(lesson_data_3):
         # If there are more lessons, show the next lesson
-        lesson_3_show_question()
+        lesson_3_show_lesson()
     else:
         # If there are no more lessons, exit back to lesson list
         lessonpage_3.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_3_current_lesson = 0
-        lesson_3_show_question()
+        lesson_3_show_lesson()
 
 # Function to move to the previous question
 def previous_lesson_3():
@@ -647,19 +772,24 @@ def previous_lesson_3():
     lesson_3_current_lesson -= 1
     if lesson_3_current_lesson >= 0:
         # If there are preivous lessons, show the previous lesson
-        lesson_3_show_question()
+        lesson_3_show_lesson()
     else:
         # If there are no previous lessons (at first lesson), exit back to the lesson list
         lessonpage_3.pack_forget()
         lessonpage.pack(fill = BOTH, expand = 1)
         lesson_3_current_lesson = 0
-        lesson_3_show_question()
+        lesson_3_show_lesson()
 
 # Reads the current lesson title and content
 def lesson_3_tts():
     engine = pyttsx3.init()
-    engine.say(lesson_3_temp)
-    engine.runAndWait()
+    # remove \n newline operators from content so it isn't read out
+    lesson_3_processed_text = lesson_3_temp["content"].replace("\n", ".")
+    # all content to be spoke is put into an array
+    lesson_3_tts_content = [lesson_3_temp["title"], lesson_3_processed_text] 
+    for i in lesson_3_tts_content:
+        engine.say(i) 
+        engine.runAndWait()
 
 # Create Lesson Title
 lesson_3_title = CTkLabel(lessonpage_3, text = "", font = ("arial bold", 25))
@@ -683,20 +813,19 @@ lesson_3_back_button.place(x = 30, y = 600)
 lesson_3_current_lesson = 0
 
 # Show first Lesson
-lesson_3_show_question()
+lesson_3_show_lesson()
 
 # Quiz 1 System (including marking)
 
-
 # Function to display the current question and choices
 def quiz_1_show_question():
-    global question_1
-    question_1 = quiz_data_1[quiz_1_current_question]
-    quiz_1_question_label.configure(text=question_1["question"])
-    
-    choices = question_1["choices"]
+    global quiz_1_temp
+    quiz_1_temp = quiz_data_1[quiz_1_current_question]
+    quiz_1_question_label.configure(text=quiz_1_temp["question"])
+   
+    choices = quiz_1_temp["choices"]
     for i in range(4):
-        quiz_1_choice_buttons[i].configure(text=choices[i], state="normal") 
+        quiz_1_choice_buttons[i].configure(text=choices[i], state="normal")
 
     quiz_1_feedback_label.configure(text="")
     quiz_1_next_button.configure(state="disabled")
@@ -706,23 +835,25 @@ def quiz_1_show_question():
 # Reads the Current Question and Choices
 def quiz_1_tts():
     engine = pyttsx3.init()
-    engine.say(question_1)
-    engine.runAndWait()
+    quiz_1_tts_content = [quiz_1_temp["question"], quiz_1_temp["choices"]]
+    for i in quiz_1_tts_content:
+        engine.say(i)
+        engine.runAndWait()
 
 # Function to check the selected answer and provide feedback
 def quiz_1_check_answer(choice):
-    question_1 = quiz_data_1[quiz_1_current_question]
+    quiz_1_temp = quiz_data_1[quiz_1_current_question]
     selected_choice = quiz_1_choice_buttons[choice].cget("text")
 
     # Check if the selected choice matches the correct answer
-    if selected_choice == question_1["answer"]:
+    if selected_choice == quiz_1_temp["answer"]:
         global quiz_1_score
         quiz_1_score += 1
         quiz_1_score_label.configure(text="Score: {}/{}".format(quiz_1_score, len(quiz_data_1)))
         quiz_1_feedback_label.configure(text="Correct!", fg_color = "Green")
     else:
-        quiz_1_feedback_label.configure(text="Incorrect! "+ question_1["answer"], fg_color = "Red")
-    
+        quiz_1_feedback_label.configure(text="Incorrect! "+ quiz_1_temp["answer"], fg_color = "Red")
+   
     # Disable all choice buttons and enable the next button
     for button_1 in quiz_1_choice_buttons:
         button_1.configure(state="disabled")
@@ -740,12 +871,11 @@ def next_question_1():
         # If all questions have been answered, display the final score and end the quiz
         messagebox.showinfo("Quiz Completed",
                             "Quiz Completed! Final score: {}/{}".format(quiz_1_score, len(quiz_data_1)))
-        
 
 # Quiz 1 Widgets
 
 # Create the question label
-quiz_1_question_label = CTkLabel(quizpage_1, anchor="center")
+quiz_1_question_label = CTkLabel(quizpage_1, anchor="center", font=('arial bold', 18))
 quiz_1_question_label.pack(pady=10)
 
 # Create the choice buttons
@@ -784,11 +914,11 @@ quiz_1_show_question()
 
 # Function to display the current question and choices
 def quiz_2_show_question():
-    global question_2
-    question_2 = quiz_data_2[quiz_2_current_question]
-    quiz_2_question_label.configure(text=question_2["question"])
+    global quiz_2_temp
+    quiz_2_temp = quiz_data_2[quiz_2_current_question]
+    quiz_2_question_label.configure(text=quiz_2_temp["question"])
    
-    choices = question_2["choices"]
+    choices = quiz_2_temp["choices"]
     for i in range(4):
         quiz_2_choice_buttons[i].configure(text=choices[i], state="normal")
 
@@ -800,22 +930,24 @@ def quiz_2_show_question():
 # Reads the Current Question and Choices
 def quiz_2_tts():
     engine = pyttsx3.init()
-    engine.say(question_2)
-    engine.runAndWait()
+    quiz_2_tts_content = [quiz_2_temp["question"], quiz_2_temp["choices"]]
+    for i in quiz_2_tts_content:
+        engine.say(i)
+        engine.runAndWait()
 
 # Function to check the selected answer and provide feedback
 def quiz_2_check_answer(choice):
-    question_2 = quiz_data_2[quiz_2_current_question]
+    quiz_2_temp = quiz_data_2[quiz_2_current_question]
     selected_choice = quiz_2_choice_buttons[choice].cget("text")
 
     # Check if the selected choice matches the correct answer
-    if selected_choice == question_2["answer"]:
+    if selected_choice == quiz_2_temp["answer"]:
         global quiz_2_score
         quiz_2_score += 1
         quiz_2_score_label.configure(text="Score: {}/{}".format(quiz_2_score, len(quiz_data_2)))
         quiz_2_feedback_label.configure(text="Correct!", fg_color = "Green")
     else:
-        quiz_2_feedback_label.configure(text="Incorrect! "+ question_2["answer"], fg_color = "Red")
+        quiz_2_feedback_label.configure(text="Incorrect! "+ quiz_2_temp["answer"], fg_color = "Red")
    
     # Disable all choice buttons and enable the next button
     for button_2 in quiz_2_choice_buttons:
@@ -838,7 +970,7 @@ def next_question_2():
 # Quiz 2 Widgets
 
 # Create the question label
-quiz_2_question_label = CTkLabel(quizpage_2, anchor="center")
+quiz_2_question_label = CTkLabel(quizpage_2, anchor="center", font=('arial bold', 18))
 quiz_2_question_label.pack(pady=10)
 
 # Create the choice buttons
@@ -879,11 +1011,11 @@ quiz_2_show_question()
 
 # Shows the current question and choice buttons
 def quiz_3_show_question():
-    global question_3
-    question_3 = quiz_data_3[quiz_3_current_question]
-    quiz_3_question_label.configure(text=question_3["question"])
+    global quiz_3_temp
+    quiz_3_temp = quiz_data_3[quiz_3_current_question]
+    quiz_3_question_label.configure(text=quiz_3_temp["question"])
    
-    choices = question_3["choices"]
+    choices = quiz_3_temp["choices"]
     for i in range(4):
         quiz_3_choice_buttons[i].configure(text=choices[i], state="normal")
 
@@ -895,22 +1027,24 @@ def quiz_3_show_question():
 # Reads the Current Question and Choices
 def quiz_3_tts():
     engine = pyttsx3.init()
-    engine.say(question_3)
-    engine.runAndWait()
+    quiz_3_tts_content = [quiz_3_temp["question"], quiz_3_temp["choices"]]
+    for i in quiz_3_tts_content:
+        engine.say(i)
+        engine.runAndWait()
 
 # Function to check the selected answer and provide feedback
 def quiz_3_check_answer(choice):
-    question_3 = quiz_data_3[quiz_3_current_question]
+    quiz_3_temp = quiz_data_3[quiz_3_current_question]
     selected_choice = quiz_3_choice_buttons[choice].cget("text")
 
     # Check if the selected choice matches the correct answer
-    if selected_choice == question_3["answer"]:
+    if selected_choice == quiz_3_temp["answer"]:
         global quiz_3_score
         quiz_3_score += 1
         quiz_3_score_label.configure(text="Score: {}/{}".format(quiz_3_score, len(quiz_data_3)))
         quiz_3_feedback_label.configure(text="Correct!", fg_color = "Green")
     else:
-        quiz_3_feedback_label.configure(text="Incorrect! "+ question_3["answer"], fg_color = "Red")
+        quiz_3_feedback_label.configure(text="Incorrect! "+ quiz_3_temp["answer"], fg_color = "Red")
    
     # Disable all choice buttons and enable the next button
     for button_3 in quiz_3_choice_buttons:
@@ -933,7 +1067,7 @@ def next_question_3():
 # Quiz 3 Widgets
 
 # Create the question label
-quiz_3_question_label = CTkLabel(quizpage_3, anchor="center")
+quiz_3_question_label = CTkLabel(quizpage_3, anchor="center", font=('arial bold', 18))
 quiz_3_question_label.pack(pady=10)
 
 # Create the choice buttons
@@ -1063,6 +1197,12 @@ image_label_1.place(x=650, y=200)
 
 def scenario_1_marking():
     global scenario_1_score
+    global scenario_1_feedback_1
+    global scenario_1_feedback_2
+    global scenario_1_feedback_3
+    global scenario_1_feedback_4
+    global scenario_1_feedback_5
+    global scenario_1_feedback_6
     scenario_1_score = 0
     # checks if inputs to answers are a b c or d, if not an error comes up and stops marking
     valid_answers = {"a", "b", "c", "d", ""}
@@ -1119,7 +1259,7 @@ def scenario_1_marking():
         scenario_1_feedback_6 = CTkLabel(scenariopage_1, text="Incorrect, Correct Answer is B", bg_color="red")
         scenario_1_feedback_6.place(x=305, y=620)
     
-
+    global scenario_1_result_label
     scenario_1_result_label = CTkLabel(scenariopage_1, text=f"Your Score is : {scenario_1_score}/7", font=("arial bold", 15), bg_color="blue")
     scenario_1_result_label.place(x = 600, y = 550)
     
@@ -1231,6 +1371,12 @@ image_label_2.place(x=650, y=240)
 
 def scenario_2_marking():
     global scenario_2_score
+    global scenario_2_feedback_1
+    global scenario_2_feedback_2
+    global scenario_2_feedback_3
+    global scenario_2_feedback_4
+    global scenario_2_feedback_5
+    global scenario_2_feedback_6
     scenario_2_score = 0
     # checks if inputs to answers are a b c or d, if not an error comes up and stops marking 
     valid_answers = {"a", "b", "c", "d", ""}    
@@ -1281,6 +1427,7 @@ def scenario_2_marking():
     else:
         scenario_2_feedback_6 = CTkLabel(scenariopage_2, text="Incorrect, Correct Answer is C", bg_color="red")
         scenario_2_feedback_6.place(x=305, y=620)
+    global scenario_2_result_label
     scenario_2_result_label = CTkLabel(scenariopage_2, text=f"Your Score is : {scenario_2_score}/7", font=("arial bold", 15), bg_color="blue")
     scenario_2_result_label.place(x = 600, y = 550)
 
@@ -1386,12 +1533,16 @@ image_label_3 = tk.Label(scenariopage_3, text="", image = image_tk_3)
 image_label_3.image = image_tk_3
 image_label_3.place(x=650, y=240)
 
-
-
 # scenario 3 marking
 
 def scenario_3_marking():
     global scenario_3_score
+    global scenario_3_feedback_1
+    global scenario_3_feedback_2
+    global scenario_3_feedback_3
+    global scenario_3_feedback_4
+    global scenario_3_feedback_5
+    global scenario_3_feedback_6
     scenario_3_score = 0
     # checks if inputs to answers are a b c or d, if not an error comes up and stops marking 
     valid_answers = {"a", "b", "c", "d", ""}
@@ -1442,6 +1593,8 @@ def scenario_3_marking():
     else:
         scenario_3_feedback_6 = CTkLabel(scenariopage_3, text="Incorrect, Correct Answer is C", bg_color="red")
         scenario_3_feedback_6.place(x=305, y=620)
+    
+    global scenario_3_result_label
     scenario_3_result_label = CTkLabel(scenariopage_3, text=f"Your Score is : {scenario_3_score}/7", font=("arial bold", 15), bg_color="blue")
     scenario_3_result_label.place(x = 600, y = 550)
 
